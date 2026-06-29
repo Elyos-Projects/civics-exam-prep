@@ -1,0 +1,37 @@
+{
+  "id": "civics-exam-prep-review-008",
+  "title": "Accuracy + non-partisan + sensitivity review of citizenship items (sign-off recorded)",
+  "project": "civics-exam-prep",
+  "type": "research",
+  "lane": "donated",
+  "priority": "high",
+  "domain": [
+    "education",
+    "civic",
+    "exam-prep",
+    "content",
+    "review",
+    "citizenship"
+  ],
+  "riskTier": "medium",
+  "urgent": false,
+  "deliverable": "document",
+  "tokenEstimate": "medium",
+  "status": "open",
+  "context": "MEDIUM risk-tier kill-gate: citizenship items do not ship without an accuracy reviewer's recorded sign-off. This task is the independent accuracy, non-partisan, and sensitivity review of the drafted citizenship items. Accuracy reviewer is TO BE SECURED (verifiedNeed=false).",
+  "objective": "Run and record the accuracy/non-partisan/sensitivity review of the citizenship items with a version-scoped sign-off in the reviewers ledger.",
+  "acceptanceCriteria": [
+    "Independent >= 10% spot-check finds 0 factual errors (any found -> block + root-cause); 0 items flagged as partisan/opinion or insensitive",
+    "Version-scoped sign-off recorded in the reviewers ledger before ship"
+  ],
+  "resources": [
+    "PLAN.md",
+    "TASKS.md",
+    "README.md",
+    "packages/schema/src/schemas.ts"
+  ],
+  "output": "review/citizenship-review-signoff.md",
+  "requestor": "TO BE SECURED",
+  "verifiedNeed": false,
+  "outputLicense": "CC-BY-4.0"
+}

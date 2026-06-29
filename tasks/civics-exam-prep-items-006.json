@@ -1,0 +1,38 @@
+{
+  "id": "civics-exam-prep-items-006",
+  "title": "Draft original citizenship practice items (MC + flashcard) covering all civics topics, cited to USCIS",
+  "project": "civics-exam-prep",
+  "type": "writing",
+  "lane": "donated",
+  "priority": "high",
+  "domain": [
+    "education",
+    "civic",
+    "exam-prep",
+    "content",
+    "citizenship",
+    "authoring"
+  ],
+  "riskTier": "medium",
+  "urgent": false,
+  "deliverable": "dataset",
+  "tokenEstimate": "large",
+  "status": "open",
+  "context": "Original, cited citizenship practice items are the core deliverable of the pilot. Items must be our own stems/distractors/rationales (no third-party question set copied), every answer cited to an official USCIS source, and dynamic items must defer to the dynamic-answer subsystem rather than a static key. MEDIUM risk-tier: accuracy-reviewer sign-off required before shipping.",
+  "objective": "Draft original multiple-choice and flashcard citizenship items covering all official civics topics, each cited to a USCIS answer and passing the validator.",
+  "acceptanceCriteria": [
+    "Original stems, distractors, and rationales (we do not copy any third-party question set); every item cites an official USCIS answer (100% citation coverage; validator passes)",
+    "Covers all official civics topics (principles of democracy, system of government, rights/responsibilities, American history, geography, symbols, holidays) at the plain-language target",
+    "Dynamic items reference the dynamic-answer subsystem, not a static key"
+  ],
+  "resources": [
+    "PLAN.md",
+    "TASKS.md",
+    "README.md",
+    "packages/schema/src/schemas.ts"
+  ],
+  "output": "output/items/citizenship/",
+  "requestor": "TO BE SECURED",
+  "verifiedNeed": false,
+  "outputLicense": "CC-BY-4.0"
+}

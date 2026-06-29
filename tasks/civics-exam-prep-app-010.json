@@ -1,0 +1,39 @@
+{
+  "id": "civics-exam-prep-app-010",
+  "title": "No-account offline PWA: practice / mock-test / flashcard modes + persistent non-official labels",
+  "project": "civics-exam-prep",
+  "type": "code",
+  "lane": "donated",
+  "priority": "high",
+  "domain": [
+    "education",
+    "civic",
+    "exam-prep",
+    "content",
+    "app",
+    "pwa",
+    "accessibility"
+  ],
+  "riskTier": "low",
+  "urgent": false,
+  "deliverable": "pr",
+  "tokenEstimate": "large",
+  "status": "open",
+  "context": "Delivery means a free, offline, accessible practice surface with no accounts, no PII, no ads. The PWA gives learners practice, mock-test, and flashcard modes with persistent non-official/non-advice labeling on every screen.",
+  "objective": "Ship the no-account offline PWA with practice/mock-test/flashcard modes, local-only progress, and persistent non-official labels, meeting initial WCAG 2.2 AA.",
+  "acceptanceCriteria": [
+    "Requires no account, collects no PII, stores progress local-device only, works offline, runs no ads",
+    "Practice mode gives immediate feedback + cited rationale; mock-test mode labels its score 'practice-only, not an official score'; persistent 'not official / not advice / verify with USCIS' labeling on every screen",
+    "Meets initial WCAG 2.2 AA (keyboard + screen-reader usable)"
+  ],
+  "resources": [
+    "PLAN.md",
+    "TASKS.md",
+    "README.md",
+    "packages/schema/src/schemas.ts"
+  ],
+  "output": "packages/app/",
+  "requestor": "TO BE SECURED",
+  "verifiedNeed": false,
+  "outputLicense": "MIT"
+}

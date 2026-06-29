@@ -1,0 +1,38 @@
+{
+  "id": "civics-exam-prep-dynamic-007",
+  "title": "Dynamic-answer subsystem (officeholder/state items) + 'verify current' affordance + lookup",
+  "project": "civics-exam-prep",
+  "type": "code",
+  "lane": "donated",
+  "priority": "medium",
+  "domain": [
+    "education",
+    "civic",
+    "exam-prep",
+    "content",
+    "tooling",
+    "dynamic-answer",
+    "app"
+  ],
+  "riskTier": "medium",
+  "urgent": false,
+  "deliverable": "pr",
+  "tokenEstimate": "medium",
+  "status": "open",
+  "context": "Officeholder and state-dependent civics answers (e.g., current President/senators/governor/representative) go stale and must never ship as a single static correct answer. This subsystem backs such items with a maintained, state/date-keyed lookup and a 'verify current' affordance pointing to the official source.",
+  "objective": "Build the dynamic-answer subsystem and the 'verify the current answer' affordance with an official-source pointer and a maintained lookup, passing the staleness test.",
+  "acceptanceCriteria": [
+    "Officeholder/state-dependent items (e.g., current President/senators/governor/representative) are never shipped as a single static correct answer",
+    "App renders a 'verify the current answer for your state/today' affordance with an official-source pointer; a maintained lookup keyed by state/date backs it; short re-verification cadence + on-change refresh; staleness test passes"
+  ],
+  "resources": [
+    "PLAN.md",
+    "TASKS.md",
+    "README.md",
+    "packages/schema/src/schemas.ts"
+  ],
+  "output": "packages/dynamic-answer/",
+  "requestor": "TO BE SECURED",
+  "verifiedNeed": false,
+  "outputLicense": "MIT"
+}

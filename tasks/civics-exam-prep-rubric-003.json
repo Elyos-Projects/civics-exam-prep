@@ -1,0 +1,41 @@
+{
+  "id": "civics-exam-prep-rubric-003",
+  "title": "Accuracy-review + non-partisan + sensitivity rubric + 'not official/not advice' framing + dynamic-answer policy",
+  "project": "civics-exam-prep",
+  "type": "design-spec",
+  "lane": "donated",
+  "priority": "high",
+  "domain": [
+    "education",
+    "civic",
+    "exam-prep",
+    "content",
+    "review",
+    "policy",
+    "safety"
+  ],
+  "riskTier": "medium",
+  "urgent": false,
+  "deliverable": "document",
+  "tokenEstimate": "medium",
+  "status": "open",
+  "context": "Civics-Exam-Prep is a MEDIUM risk-tier project: items asserting exam-correct answers or civic facts need accuracy-reviewer sign-off before shipping, and any drift into individualized legal/immigration advice escalates the item to HIGH and out of scope. This rubric is a hard product gate defining how items are reviewed and labeled. Accuracy reviewer is TO BE SECURED (verifiedNeed=false).",
+  "objective": "Publish the accuracy + non-partisan + sensitivity review rubric, the non-official/non-advice labeling, and the dynamic-answer policy, reviewed and signed off by the accuracy reviewer.",
+  "acceptanceCriteria": [
+    "Specifies the accuracy check (every claim traceable to an official source), the non-partisan check (only what official sources state; no opinion/advocacy/party-candidate framing), and the sensitivity check (no demeaning/exclusionary framing of immigrants/groups)",
+    "Mandates persistent 'Study material - not an official test; not legal/immigration advice; verify current answers with the official source' labeling",
+    "Defines the dynamic-answer policy (never serve a stale static answer for officeholder/state items; show the 'verify current' affordance + official pointer; short re-verification cadence)",
+    "Defines version-scoped sign-off, the reviewer veto, and the HIGH-escalation rule for advice-drift",
+    "Reviewed + signed off by the accuracy reviewer (recorded in the reviewers ledger)"
+  ],
+  "resources": [
+    "PLAN.md",
+    "TASKS.md",
+    "README.md",
+    "packages/schema/src/schemas.ts"
+  ],
+  "output": "output/rubric/accuracy-nonpartisan-sensitivity-rubric.md",
+  "requestor": "TO BE SECURED",
+  "verifiedNeed": false,
+  "outputLicense": "CC-BY-4.0"
+}

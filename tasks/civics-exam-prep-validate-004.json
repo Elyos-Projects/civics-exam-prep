@@ -1,0 +1,39 @@
+{
+  "id": "civics-exam-prep-validate-004",
+  "title": "Validation tooling: 'no source, no item', single-correct, distractor sanity, readability, staleness - wired into CI",
+  "project": "civics-exam-prep",
+  "type": "code",
+  "lane": "donated",
+  "priority": "high",
+  "domain": [
+    "education",
+    "civic",
+    "exam-prep",
+    "content",
+    "tooling",
+    "validation",
+    "ci"
+  ],
+  "riskTier": "low",
+  "urgent": false,
+  "deliverable": "pr",
+  "tokenEstimate": "medium",
+  "status": "open",
+  "context": "Civics-Exam-Prep enforces 'no source, no item' as a build-breaking gate so unsourced or stale items can never ship. This validator turns the item-bank schema (schema-001) and repo CI (repo-002) into runtime-enforced quality and provenance checks.",
+  "objective": "Implement and CI-wire validation that fails the build on items missing a source, lacking single-correct (static), bad distractors, exceeding readability, or past validUntil; report citation coverage and staleness.",
+  "acceptanceCriteria": [
+    "CI fails the build on any item missing a source, lacking a single correct answer (static), containing duplicate/contradictory options, exceeding the readability target, or past validUntil without a flag",
+    "Reports citation coverage (target 100%) and a staleness report per run",
+    "Wired into the repo CI from task civics-exam-prep-repo-002 and runs on every PR"
+  ],
+  "resources": [
+    "PLAN.md",
+    "TASKS.md",
+    "README.md",
+    "packages/schema/src/schemas.ts"
+  ],
+  "output": "packages/validate/ (validator + CI wiring)",
+  "requestor": "TO BE SECURED",
+  "verifiedNeed": false,
+  "outputLicense": "MIT"
+}

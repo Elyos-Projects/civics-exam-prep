@@ -1,0 +1,38 @@
+{
+  "id": "civics-exam-prep-a11y-009",
+  "title": "Plain-language + reading/writing-vocab study support + initial a11y pass on items",
+  "project": "civics-exam-prep",
+  "type": "writing",
+  "lane": "donated",
+  "priority": "medium",
+  "domain": [
+    "education",
+    "civic",
+    "exam-prep",
+    "content",
+    "accessibility",
+    "plain-language"
+  ],
+  "riskTier": "low",
+  "urgent": false,
+  "deliverable": "document",
+  "tokenEstimate": "medium",
+  "status": "open",
+  "context": "Many learners have limited English and limited income; plain-language phrasing and reading/writing-vocabulary support widen access to the citizenship items. This initial accessibility pass keeps items studyable for low-literacy and low-vision learners.",
+  "objective": "Add plain-language phrasing and reading/writing-vocabulary study support and run an initial accessibility pass over the citizenship items.",
+  "acceptanceCriteria": [
+    "Item stems/rationales meet the plain-language reading-level target with reading/writing-vocabulary study support added",
+    "Initial accessibility pass on items completed (keyboard + screen-reader considerations noted for the app)",
+    "No change to cited official answers; provenance and labeling preserved"
+  ],
+  "resources": [
+    "PLAN.md",
+    "TASKS.md",
+    "README.md",
+    "packages/schema/src/schemas.ts"
+  ],
+  "output": "output/a11y/plain-language-vocab-support.md",
+  "requestor": "TO BE SECURED",
+  "verifiedNeed": false,
+  "outputLicense": "CC-BY-4.0"
+}

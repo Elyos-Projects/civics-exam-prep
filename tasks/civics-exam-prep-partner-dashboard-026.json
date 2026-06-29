@@ -1,0 +1,39 @@
+{
+  "id": "civics-exam-prep-partner-dashboard-026",
+  "title": "Optional privacy-preserving partner cohort dashboard (aggregate only)",
+  "project": "civics-exam-prep",
+  "type": "code",
+  "lane": "donated",
+  "priority": "low",
+  "domain": [
+    "education",
+    "civic",
+    "exam-prep",
+    "content",
+    "app",
+    "outcomes",
+    "privacy"
+  ],
+  "riskTier": "medium",
+  "urgent": false,
+  "deliverable": "pr",
+  "tokenEstimate": "medium",
+  "status": "open",
+  "context": "An optional partner dashboard lets a steward see aggregate cohort outcomes (learners reached, readiness improvement) without ever storing individual learner records. Privacy is non-negotiable: aggregate counts only, no PII, no immigration status.",
+  "objective": "Build an optional privacy-preserving partner cohort dashboard showing aggregate-only outcomes with no individual learner records.",
+  "acceptanceCriteria": [
+    "Dashboard shows aggregate counts only (learners reached, readiness improvement); no individual learner records stored",
+    "No PII and no immigration-status data collected or displayed",
+    "Opt-in for partners; non-official/non-advice framing preserved"
+  ],
+  "resources": [
+    "PLAN.md",
+    "TASKS.md",
+    "README.md",
+    "packages/schema/src/schemas.ts"
+  ],
+  "output": "packages/partner-dashboard/",
+  "requestor": "TO BE SECURED",
+  "verifiedNeed": false,
+  "outputLicense": "MIT"
+}

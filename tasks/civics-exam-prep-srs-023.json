@@ -1,0 +1,39 @@
+{
+  "id": "civics-exam-prep-srs-023",
+  "title": "In-app spaced-repetition scheduling (local-only, no accounts)",
+  "project": "civics-exam-prep",
+  "type": "code",
+  "lane": "donated",
+  "priority": "low",
+  "domain": [
+    "education",
+    "civic",
+    "exam-prep",
+    "content",
+    "app",
+    "srs",
+    "privacy"
+  ],
+  "riskTier": "low",
+  "urgent": false,
+  "deliverable": "pr",
+  "tokenEstimate": "medium",
+  "status": "open",
+  "context": "In-app spaced-repetition scheduling builds on the export deck to help learners retain civics facts, kept strictly local-only with no accounts and no PII.",
+  "objective": "Add local-only spaced-repetition scheduling in the app, PII-free and account-free.",
+  "acceptanceCriteria": [
+    "Spaced-repetition scheduling runs entirely on-device with no accounts and no PII",
+    "Builds on the exported spaced-repetition deck format without server dependence",
+    "Works offline; non-official/non-advice labeling preserved"
+  ],
+  "resources": [
+    "PLAN.md",
+    "TASKS.md",
+    "README.md",
+    "packages/schema/src/schemas.ts"
+  ],
+  "output": "packages/app/srs/",
+  "requestor": "TO BE SECURED",
+  "verifiedNeed": false,
+  "outputLicense": "MIT"
+}

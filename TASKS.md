@@ -294,6 +294,76 @@ it, a runtime-enforced review cadence for content, and a gated expansion process
 | civics-exam-prep-naturalization-english-025 | Naturalization English reading/writing practice module | writing | medium | medium | dataset | Original items from USCIS vocab; keep in official language |
 | civics-exam-prep-partner-dashboard-026 | Optional privacy-preserving partner cohort dashboard (aggregate only) | code | medium | medium | pr | Aggregate counts only; no individual learner records |
 
+**Acceptance criteria — backlog/future** (these rows previously lacked explicit criteria; each is
+now carried in `tasks/<id>.json`)
+
+- **civics-exam-prep-langs-021** — per-language scaffolding (UI/rationale/glossary) with test items
+  kept in the official language; per-language accuracy review; languages added per **confirmed
+  partner demand** (representative task — expands into per-language tasks on confirmation, none
+  fabricated).
+- **civics-exam-prep-audio-022** — read-aloud audio for items + rationales; no PII; offline/no-account
+  constraints upheld; non-official/non-advice labels preserved.
+- **civics-exam-prep-srs-023** — on-device spaced-repetition scheduling; no accounts, no PII; builds on
+  the export deck; works offline.
+- **civics-exam-prep-hiset-024** — original HiSET/TASC-aligned items cited to public standards;
+  nominative-trademark-use-only + non-affiliation disclaimers; **does not start until the HSE IP/legal
+  review is extended to these brands**.
+- **civics-exam-prep-naturalization-english-025** — original items from the public-domain USCIS
+  reading/writing vocabulary; kept in the official test language; accuracy-reviewer sign-off recorded.
+- **civics-exam-prep-partner-dashboard-026** — aggregate-only cohort dashboard; no individual learner
+  records, no PII, no immigration status; opt-in for partners.
+
+---
+
+## Generated task index
+
+Every milestone-table row above (M0–M6) and every Backlog/future row now has a schema-valid
+`tasks/<id>.json` (validated against `packages/schema/src/schemas.ts`; all 27 files pass:
+`filename == id`, no duplicates, no extra keys). The seed task `civics-exam-prep-exam-000.json`
+was kept as-is.
+
+**Fan-out:** none. No backlog row enumerates a bounded dimension to fan out over. The only
+multi-item dimension — study-scaffolding languages — is open-ended/partner-demand-driven:
+`civics-exam-prep-i18n-012` covers Spanish-first scaffolding and
+`civics-exam-prep-langs-021` is a single representative task that expands into per-language
+tasks once a partner/language set is confirmed (no languages are fabricated here).
+
+**Guardrails preserved:** all delivery-dependent tasks carry `requestor: "TO BE SECURED"` and
+`verifiedNeed: false`; MEDIUM risk-tier accuracy/IP-legal sign-off gates are kept verbatim in
+`context`/`acceptanceCriteria`; the HSE lane stays gated behind `civics-exam-prep-hse-legal-013`;
+the advice-drift HIGH-escalation rule is retained. No task authors refused content (individualized
+legal/immigration advice is explicitly out of scope and HIGH-escalated).
+
+Generated ids (M0→M6, then Backlog/future):
+
+- `civics-exam-prep-exam-000` (seed)
+- `civics-exam-prep-schema-001`
+- `civics-exam-prep-repo-002`
+- `civics-exam-prep-rubric-003`
+- `civics-exam-prep-validate-004`
+- `civics-exam-prep-sources-005`
+- `civics-exam-prep-items-006`
+- `civics-exam-prep-dynamic-007`
+- `civics-exam-prep-review-008`
+- `civics-exam-prep-a11y-009`
+- `civics-exam-prep-app-010`
+- `civics-exam-prep-export-011`
+- `civics-exam-prep-i18n-012`
+- `civics-exam-prep-hse-legal-013`
+- `civics-exam-prep-hse-items-014`
+- `civics-exam-prep-hse-review-015`
+- `civics-exam-prep-eval-016`
+- `civics-exam-prep-hardening-017`
+- `civics-exam-prep-pilot-018`
+- `civics-exam-prep-handoff-019`
+- `civics-exam-prep-ops-020`
+- `civics-exam-prep-langs-021`
+- `civics-exam-prep-audio-022`
+- `civics-exam-prep-srs-023`
+- `civics-exam-prep-hiset-024`
+- `civics-exam-prep-naturalization-english-025`
+- `civics-exam-prep-partner-dashboard-026`
+
 ---
 
 ## Example task JSON

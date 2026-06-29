@@ -1,0 +1,39 @@
+{
+  "id": "civics-exam-prep-audio-022",
+  "title": "Read-aloud audio for items + rationales (low-literacy / low-vision support)",
+  "project": "civics-exam-prep",
+  "type": "code",
+  "lane": "donated",
+  "priority": "low",
+  "domain": [
+    "education",
+    "civic",
+    "exam-prep",
+    "content",
+    "accessibility",
+    "audio",
+    "app"
+  ],
+  "riskTier": "low",
+  "urgent": false,
+  "deliverable": "pr",
+  "tokenEstimate": "medium",
+  "status": "open",
+  "context": "Read-aloud audio for items and rationales supports low-literacy and low-vision learners and aligns with the read-aloud-audio sibling project. PII-free and offline-friendly.",
+  "objective": "Add read-aloud audio for items and rationales as an accessibility feature, keeping it PII-free and offline-capable.",
+  "acceptanceCriteria": [
+    "Items and rationales can be played as read-aloud audio in the practice surface",
+    "Feature collects no PII and works within the offline/no-account constraints",
+    "Non-official/non-advice labeling preserved on audio surfaces"
+  ],
+  "resources": [
+    "PLAN.md",
+    "TASKS.md",
+    "README.md",
+    "packages/schema/src/schemas.ts"
+  ],
+  "output": "packages/app/audio/",
+  "requestor": "TO BE SECURED",
+  "verifiedNeed": false,
+  "outputLicense": "MIT"
+}

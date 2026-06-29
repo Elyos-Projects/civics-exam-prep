@@ -1,0 +1,38 @@
+{
+  "id": "civics-exam-prep-hse-items-014",
+  "title": "Original HSE-aligned practice items (RLA/Math/Science/Social Studies) cited to public standards",
+  "project": "civics-exam-prep",
+  "type": "writing",
+  "lane": "donated",
+  "priority": "medium",
+  "domain": [
+    "education",
+    "civic",
+    "exam-prep",
+    "content",
+    "hse",
+    "authoring"
+  ],
+  "riskTier": "medium",
+  "urgent": false,
+  "deliverable": "dataset",
+  "tokenEstimate": "large",
+  "status": "open",
+  "context": "HSE-aligned practice items across RLA/Math/Science/Social Studies are original content aligned to approved public standards, carrying the non-affiliation disclaimer and non-official/non-advice labels. This task does not start until the IP/legal gate (hse-legal-013) clears. MEDIUM risk-tier: subject-matter accuracy review required.",
+  "objective": "Draft original HSE-aligned items across the four subjects, each cited to the approved public standards and passing the validator, with non-affiliation labeling.",
+  "acceptanceCriteria": [
+    "Original items across RLA/Math/Science/Social Studies aligned to the approved public standards; each cited; 100% citation coverage; validator passes",
+    "Carries the non-affiliation disclaimer and the non-official/non-advice labels",
+    "Does not begin until civics-exam-prep-hse-legal-013 has cleared (recorded in governance)"
+  ],
+  "resources": [
+    "PLAN.md",
+    "TASKS.md",
+    "README.md",
+    "packages/schema/src/schemas.ts"
+  ],
+  "output": "output/items/hse/",
+  "requestor": "TO BE SECURED",
+  "verifiedNeed": false,
+  "outputLicense": "CC-BY-4.0"
+}

@@ -1,0 +1,39 @@
+{
+  "id": "civics-exam-prep-hardening-017",
+  "title": "Full WCAG 2.2 AA + offline verification + independent >=10% accuracy spot-check + learner-pilot runbook",
+  "project": "civics-exam-prep",
+  "type": "code",
+  "lane": "donated",
+  "priority": "medium",
+  "domain": [
+    "education",
+    "civic",
+    "exam-prep",
+    "content",
+    "accessibility",
+    "hardening",
+    "pilot"
+  ],
+  "riskTier": "medium",
+  "urgent": false,
+  "deliverable": "document",
+  "tokenEstimate": "medium",
+  "status": "open",
+  "context": "Pilot readiness requires the practice surface and exports to fully meet WCAG 2.2 AA, offline to be verified end-to-end, an independent accuracy spot-check to pass, and a learner-pilot runbook so a partner can run a cohort with an anonymous outcome survey.",
+  "objective": "Verify full WCAG 2.2 AA + offline, pass an independent >=10% accuracy spot-check, and write the learner-pilot onboarding runbook.",
+  "acceptanceCriteria": [
+    "Practice surface + exports meet WCAG 2.2 AA; offline verified end-to-end",
+    "Independent >= 10% accuracy spot-check passes (0 errors; any found blocks release)",
+    "Learner-pilot onboarding runbook written (how a partner runs a cohort, anonymous outcome survey included)"
+  ],
+  "resources": [
+    "PLAN.md",
+    "TASKS.md",
+    "README.md",
+    "packages/schema/src/schemas.ts"
+  ],
+  "output": "output/hardening/pilot-readiness-runbook.md",
+  "requestor": "TO BE SECURED",
+  "verifiedNeed": false,
+  "outputLicense": "CC-BY-4.0"
+}
