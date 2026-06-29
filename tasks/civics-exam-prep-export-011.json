@@ -1,0 +1,38 @@
+{
+  "id": "civics-exam-prep-export-011",
+  "title": "Exporters: printable PDF study sheets + spaced-repetition (CSV/Anki) deck + open JSON dataset",
+  "project": "civics-exam-prep",
+  "type": "code",
+  "lane": "donated",
+  "priority": "medium",
+  "domain": [
+    "education",
+    "civic",
+    "exam-prep",
+    "content",
+    "tooling",
+    "exports"
+  ],
+  "riskTier": "low",
+  "urgent": false,
+  "deliverable": "pr",
+  "tokenEstimate": "medium",
+  "status": "open",
+  "context": "Learners study in different ways; exporters turn the cited item bank into printable PDF study sheets, a spaced-repetition (CSV/Anki) deck, and an open JSON dataset, each carrying the license and non-official labels.",
+  "objective": "Build exporters producing printable PDFs, a spaced-repetition deck (CSV/Anki), and an open JSON dataset, all preserving license and non-official labeling.",
+  "acceptanceCriteria": [
+    "Printable PDF study sheets, a spaced-repetition (CSV/Anki) deck, and an open JSON dataset all export from the cited item bank",
+    "Every export carries the output license and the non-official/non-advice labels",
+    "Exports stay in sync with the validated item bank (no uncited or stale items leak)"
+  ],
+  "resources": [
+    "PLAN.md",
+    "TASKS.md",
+    "README.md",
+    "packages/schema/src/schemas.ts"
+  ],
+  "output": "packages/exporters/",
+  "requestor": "TO BE SECURED",
+  "verifiedNeed": false,
+  "outputLicense": "MIT"
+}

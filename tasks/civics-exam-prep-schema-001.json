@@ -1,0 +1,38 @@
+{
+  "id": "civics-exam-prep-schema-001",
+  "title": "Item-bank schema (stem/options/answer/rationale/sources/dynamicAnswer/lastVerified/validUntil/lang/license)",
+  "project": "civics-exam-prep",
+  "type": "design-spec",
+  "lane": "donated",
+  "priority": "high",
+  "domain": [
+    "education",
+    "civic",
+    "exam-prep",
+    "content",
+    "schema",
+    "provenance"
+  ],
+  "riskTier": "low",
+  "urgent": false,
+  "deliverable": "document",
+  "tokenEstimate": "medium",
+  "status": "open",
+  "context": "Civics-Exam-Prep produces open, accuracy-reviewed practice items for free high-stakes exams, each item cited to an official source. The item-bank schema is a hard product gate: it encodes 'no source, no item' provenance, single-correct-for-static, and dynamic-answer handling so accuracy and review are enforceable in CI. No delivery partner or accuracy reviewer is yet secured (verifiedNeed=false).",
+  "objective": "Specify the version-controlled item-bank schema covering every field needed for cited, reviewable, staleness-aware practice items.",
+  "acceptanceCriteria": [
+    "Defines every field incl. sources[] (official citation + URL + retrieval date + version + legal-status note), dynamicAnswer (static | officeholder | state-dependent), correctAnswer (forbidden for dynamic items - they reference a lookup/method instead), lastVerified/validUntil, language, outputLicense, reviewedBy/signoffVersion",
+    "Requires >= 1 source per item and exactly one correct answer for static items",
+    "Items stored as version-controlled files so provenance + review are visible in history"
+  ],
+  "resources": [
+    "PLAN.md",
+    "TASKS.md",
+    "README.md",
+    "packages/schema/src/schemas.ts"
+  ],
+  "output": "output/schema/item-bank-schema.md",
+  "requestor": "TO BE SECURED",
+  "verifiedNeed": false,
+  "outputLicense": "CC-BY-4.0"
+}

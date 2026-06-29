@@ -1,0 +1,38 @@
+{
+  "id": "civics-exam-prep-i18n-012",
+  "title": "Multilingual study scaffolding (UI + rationale + glossary; test items kept in official language)",
+  "project": "civics-exam-prep",
+  "type": "writing",
+  "lane": "donated",
+  "priority": "medium",
+  "domain": [
+    "education",
+    "civic",
+    "exam-prep",
+    "content",
+    "i18n",
+    "translation",
+    "accessibility"
+  ],
+  "riskTier": "medium",
+  "urgent": false,
+  "deliverable": "translation",
+  "tokenEstimate": "medium",
+  "status": "open",
+  "context": "Many prospective citizens have limited English; translating the study scaffolding (UI, instructions, rationales, glossary) widens access while the test items themselves stay in the official test language so learners practice the surface they are actually tested on. Spanish first; per-language accuracy review required. Translations stay source-compatible (CC-BY-4.0 over our own CC-BY content).",
+  "objective": "Translate the UI, instructions, rationales, and glossary (Spanish first) while keeping the test items in the official language, with per-language accuracy review.",
+  "acceptanceCriteria": [
+    "Translates UI, instructions, rationales, and glossary; keeps the test items themselves in the official test language (does not translate the answer surface a learner is tested on)",
+    "Each translated rationale/glossary set is reviewed for accuracy per language; Spanish first"
+  ],
+  "resources": [
+    "PLAN.md",
+    "TASKS.md",
+    "README.md",
+    "packages/schema/src/schemas.ts"
+  ],
+  "output": "output/i18n/",
+  "requestor": "TO BE SECURED",
+  "verifiedNeed": false,
+  "outputLicense": "CC-BY-4.0"
+}

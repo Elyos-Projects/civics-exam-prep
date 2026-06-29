@@ -1,0 +1,39 @@
+{
+  "id": "civics-exam-prep-hse-legal-013",
+  "title": "HSE IP/legal review: trademark posture + public-standard source set + non-affiliation framing - GATE",
+  "project": "civics-exam-prep",
+  "type": "research",
+  "lane": "donated",
+  "priority": "medium",
+  "domain": [
+    "education",
+    "civic",
+    "exam-prep",
+    "content",
+    "licensing",
+    "hse",
+    "governance"
+  ],
+  "riskTier": "medium",
+  "urgent": false,
+  "deliverable": "document",
+  "tokenEstimate": "medium",
+  "status": "open",
+  "context": "'GED' is a registered trademark with proprietary, copyright-protected test content; the HSE lane is reframed as original practice aligned to publicly available standards and is GATED behind this IP/legal review. No HSE content task starts until this clears. IP/legal reviewer is TO BE SECURED (verifiedNeed=false).",
+  "objective": "Complete and record the HSE IP/legal review fixing the trademark posture, approving the public-standard source set, and mandating the non-affiliation framing - the gate for all HSE content.",
+  "acceptanceCriteria": [
+    "Confirms no proprietary/trademarked content is reproduced; nominative trademark use only; a clear non-affiliation disclaimer ('not GED/HiSET test content; not affiliated/endorsed')",
+    "Approves the public-standard source set (e.g., CCR Standards for Adult Education + openly-licensed descriptors) with provenance + reuse terms recorded",
+    "No HSE content task starts until this review clears (recorded in governance)"
+  ],
+  "resources": [
+    "PLAN.md",
+    "TASKS.md",
+    "README.md",
+    "packages/schema/src/schemas.ts"
+  ],
+  "output": "output/hse/ip-legal-review.md",
+  "requestor": "TO BE SECURED",
+  "verifiedNeed": false,
+  "outputLicense": "CC-BY-4.0"
+}

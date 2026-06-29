@@ -1,0 +1,39 @@
+{
+  "id": "civics-exam-prep-hiset-024",
+  "title": "HiSET/TASC-aligned practice (additional HSE exams)",
+  "project": "civics-exam-prep",
+  "type": "writing",
+  "lane": "donated",
+  "priority": "low",
+  "domain": [
+    "education",
+    "civic",
+    "exam-prep",
+    "content",
+    "hse",
+    "authoring",
+    "licensing"
+  ],
+  "riskTier": "medium",
+  "urgent": false,
+  "deliverable": "dataset",
+  "tokenEstimate": "large",
+  "status": "open",
+  "context": "HiSET/TASC-aligned practice extends the HSE lane to additional brands. It may only start after the HSE IP/legal review is extended to these brands - the same trademark/non-affiliation posture and public-standard sourcing apply. Reviewer and brand-specific legal clearance are TO BE SECURED.",
+  "objective": "Draft original HiSET/TASC-aligned practice items cited to public standards, only after the IP/legal review is extended to these brands.",
+  "acceptanceCriteria": [
+    "Original items aligned to approved public standards; each cited; 100% citation coverage; validator passes",
+    "Carries nominative-trademark-use-only and non-affiliation disclaimers for HiSET/TASC; non-official/non-advice labels present",
+    "Does not begin until the HSE IP/legal review is extended to HiSET/TASC (recorded in governance)"
+  ],
+  "resources": [
+    "PLAN.md",
+    "TASKS.md",
+    "README.md",
+    "packages/schema/src/schemas.ts"
+  ],
+  "output": "output/items/hse-hiset/",
+  "requestor": "TO BE SECURED",
+  "verifiedNeed": false,
+  "outputLicense": "CC-BY-4.0"
+}

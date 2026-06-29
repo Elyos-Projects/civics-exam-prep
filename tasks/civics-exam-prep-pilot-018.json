@@ -1,0 +1,39 @@
+{
+  "id": "civics-exam-prep-pilot-018",
+  "title": "Secure delivery partner + steward + independent accuracy/non-partisan audit of shipped content",
+  "project": "civics-exam-prep",
+  "type": "research",
+  "lane": "donated",
+  "priority": "high",
+  "domain": [
+    "education",
+    "civic",
+    "exam-prep",
+    "content",
+    "partner",
+    "delivery",
+    "governance"
+  ],
+  "riskTier": "medium",
+  "urgent": false,
+  "deliverable": "document",
+  "tokenEstimate": "medium",
+  "status": "open",
+  "context": "The deed requires a real beneficiary: an adult-ed program, library, literacy council, community college, or immigrant-serving nonprofit secured as pilot partner, with a steward and an independent audit of shipped content. If no partner is secured by ~2027-03-31, the build-vs-pivot rule applies. Partner is currently TO BE SECURED (verifiedNeed=false).",
+  "objective": "Secure a delivery partner + steward and pass an independent accuracy/non-partisan audit of the shipped content, or apply the build-vs-pivot decision rule.",
+  "acceptanceCriteria": [
+    "A real adult-ed program / library / literacy council / community college / immigrant-serving nonprofit is secured as pilot; steward assigned; verifiedNeed flips to true",
+    "Independent accuracy + non-partisan audit of shipped content passes; citation/staleness gates confirmed in force",
+    "Driven by the dated partner-acquisition plan; if no partner by ~2027-03-31, apply the build-vs-pivot decision rule (donate the vetted bank + app to an OER home, or mothball to maintenance-only) - recorded in governance - rather than ship to no real beneficiary"
+  ],
+  "resources": [
+    "PLAN.md",
+    "TASKS.md",
+    "README.md",
+    "packages/schema/src/schemas.ts"
+  ],
+  "output": "output/pilot/partner-and-audit.md",
+  "requestor": "TO BE SECURED",
+  "verifiedNeed": false,
+  "outputLicense": "CC-BY-4.0"
+}

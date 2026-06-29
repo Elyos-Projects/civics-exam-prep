@@ -1,0 +1,38 @@
+{
+  "id": "civics-exam-prep-handoff-019",
+  "title": "Pilot cohort uses the bank; readiness/pass outcomes recorded (anonymous, voluntary, aggregate)",
+  "project": "civics-exam-prep",
+  "type": "maintenance",
+  "lane": "donated",
+  "priority": "high",
+  "domain": [
+    "education",
+    "civic",
+    "exam-prep",
+    "content",
+    "outcomes",
+    "delivery",
+    "privacy"
+  ],
+  "riskTier": "medium",
+  "urgent": false,
+  "deliverable": "document",
+  "tokenEstimate": "medium",
+  "status": "open",
+  "context": "The closed loop - the deed - is a pilot cohort actually using the bank to prepare, with anonymous, voluntary, aggregate readiness and pass outcomes recorded. Privacy is non-negotiable: never touch immigration status or PII. Driven by a secured partner (TO BE SECURED).",
+  "objective": "Run a pilot cohort on the bank and record anonymous, voluntary, aggregate readiness/pass outcomes with the partner's confirmation.",
+  "acceptanceCriteria": [
+    "A pilot cohort (>= 50 learners target) uses the bank; an anonymous, opt-in pre/post survey records readiness improvement (>= 60% target); voluntary, anonymous pass reports collected where ethically possible (never touching immigration status or PII)",
+    "Outcomes recorded with the partner's confirmation; non-official/non-advice labeling upheld"
+  ],
+  "resources": [
+    "PLAN.md",
+    "TASKS.md",
+    "README.md",
+    "packages/schema/src/schemas.ts"
+  ],
+  "output": "output/handoff/pilot-outcomes.md",
+  "requestor": "TO BE SECURED",
+  "verifiedNeed": false,
+  "outputLicense": "CC-BY-4.0"
+}

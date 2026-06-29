@@ -1,0 +1,38 @@
+{
+  "id": "civics-exam-prep-repo-002",
+  "title": "Monorepo + pnpm + TS/ESM + CI (build/test/lint + content-schema validation) skeleton",
+  "project": "civics-exam-prep",
+  "type": "code",
+  "lane": "donated",
+  "priority": "high",
+  "domain": [
+    "education",
+    "civic",
+    "exam-prep",
+    "content",
+    "tooling",
+    "infra"
+  ],
+  "riskTier": "low",
+  "urgent": false,
+  "deliverable": "pr",
+  "tokenEstimate": "small",
+  "status": "open",
+  "context": "Civics-Exam-Prep is an Elyos donated-lane project delivering free, offline, accessible practice items. The repository skeleton (pnpm workspaces, TypeScript/ESM, CI for build/test/lint + content-schema validation) is the foundation all content and app work builds on.",
+  "objective": "Stand up the monorepo skeleton with pnpm workspaces, TypeScript/ESM, and a green CI pipeline running build/test/lint plus content-schema validation.",
+  "acceptanceCriteria": [
+    "pnpm workspaces + TypeScript/ESM skeleton builds clean (pnpm build && pnpm test && pnpm lint pass)",
+    "CI runs build, test, lint, and the content-schema validation step on every PR and is green",
+    "Repo layout supports later packages (schema, validator, app, exporters) without churn"
+  ],
+  "resources": [
+    "PLAN.md",
+    "TASKS.md",
+    "README.md",
+    "packages/schema/src/schemas.ts"
+  ],
+  "output": "packages/ (monorepo skeleton + CI workflow)",
+  "requestor": "TO BE SECURED",
+  "verifiedNeed": false,
+  "outputLicense": "MIT"
+}

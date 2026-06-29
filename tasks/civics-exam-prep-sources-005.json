@@ -1,0 +1,39 @@
+{
+  "id": "civics-exam-prep-sources-005",
+  "title": "USCIS source vetting + provenance recording (2008 + 2020 questions/answers + reading/writing vocab)",
+  "project": "civics-exam-prep",
+  "type": "data",
+  "lane": "donated",
+  "priority": "high",
+  "domain": [
+    "education",
+    "civic",
+    "exam-prep",
+    "content",
+    "provenance",
+    "licensing",
+    "citizenship"
+  ],
+  "riskTier": "medium",
+  "urgent": false,
+  "deliverable": "dataset",
+  "tokenEstimate": "medium",
+  "status": "open",
+  "context": "Citizenship is the pilot exam on the clean public-domain footing (USCIS materials are U.S. Government works, 17 U.S.C. 105). Before any items are authored, the official USCIS sources must be vetted and their provenance recorded so every item can cite an official answer. Accuracy reviewer is TO BE SECURED (verifiedNeed=false).",
+  "objective": "Vet and record provenance for the USCIS civics sources (2008 and 2020 sets) and the reading/writing vocabulary, with public-domain status confirmed per source.",
+  "acceptanceCriteria": [
+    "Confirms + records public-domain status for each source; captures both the 2008 and 2020 civics question/answer sets and the reading/writing vocabulary, noting which applies by filing date",
+    "Provenance recorded per source (document, citation, URL, retrieval date, version, legal-status)",
+    "Accuracy reviewer confirms the official answers before items are authored"
+  ],
+  "resources": [
+    "PLAN.md",
+    "TASKS.md",
+    "README.md",
+    "packages/schema/src/schemas.ts"
+  ],
+  "output": "output/sources/uscis-provenance.json",
+  "requestor": "TO BE SECURED",
+  "verifiedNeed": false,
+  "outputLicense": "CC-BY-4.0"
+}

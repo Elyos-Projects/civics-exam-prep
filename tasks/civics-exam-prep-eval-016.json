@@ -1,0 +1,37 @@
+{
+  "id": "civics-exam-prep-eval-016",
+  "title": "Item-quality eval (single-correct, distractor plausibility, readability, bias scan) + defect report",
+  "project": "civics-exam-prep",
+  "type": "code",
+  "lane": "donated",
+  "priority": "medium",
+  "domain": [
+    "education",
+    "civic",
+    "exam-prep",
+    "content",
+    "tooling",
+    "eval"
+  ],
+  "riskTier": "medium",
+  "urgent": false,
+  "deliverable": "pr",
+  "tokenEstimate": "medium",
+  "status": "open",
+  "context": "Beyond hard schema validation, an item-quality eval checks distractor plausibility, readability, and basic bias/sensitivity, with an LLM-judge pass that flags for human review and never auto-publishes. Defects are reported per release and resolved before ship.",
+  "objective": "Build the item-quality eval (single-correct, distractor plausibility, readability, bias scan) with an advisory LLM-judge pass and a per-release defect report.",
+  "acceptanceCriteria": [
+    "Automated checks confirm exactly one correct answer (static), plausible non-overlapping distractors, reading level within target, and a basic bias/sensitivity scan; an LLM-judge pass flags for human review, never auto-publishes",
+    "Defects reported per release and resolved before ship"
+  ],
+  "resources": [
+    "PLAN.md",
+    "TASKS.md",
+    "README.md",
+    "packages/schema/src/schemas.ts"
+  ],
+  "output": "packages/eval/",
+  "requestor": "TO BE SECURED",
+  "verifiedNeed": false,
+  "outputLicense": "MIT"
+}

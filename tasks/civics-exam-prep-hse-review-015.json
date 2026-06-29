@@ -1,0 +1,38 @@
+{
+  "id": "civics-exam-prep-hse-review-015",
+  "title": "Subject-matter accuracy + sensitivity review of HSE items (sign-off recorded)",
+  "project": "civics-exam-prep",
+  "type": "research",
+  "lane": "donated",
+  "priority": "medium",
+  "domain": [
+    "education",
+    "civic",
+    "exam-prep",
+    "content",
+    "review",
+    "hse"
+  ],
+  "riskTier": "medium",
+  "urgent": false,
+  "deliverable": "document",
+  "tokenEstimate": "medium",
+  "status": "open",
+  "context": "HSE items do not ship without a subject-matter accuracy reviewer's recorded sign-off. This task is the independent subject-matter accuracy and sensitivity review of the drafted HSE items. Subject accuracy reviewer is TO BE SECURED (verifiedNeed=false).",
+  "objective": "Run and record the subject-matter accuracy and sensitivity review of the HSE items with a version-scoped sign-off.",
+  "acceptanceCriteria": [
+    "Independent subject-matter accuracy review finds 0 factual errors (any found -> block + root-cause); 0 items flagged as insensitive",
+    "Version-scoped sign-off recorded in the reviewers ledger before ship",
+    "Non-affiliation and non-official/non-advice labeling confirmed on all reviewed items"
+  ],
+  "resources": [
+    "PLAN.md",
+    "TASKS.md",
+    "README.md",
+    "packages/schema/src/schemas.ts"
+  ],
+  "output": "review/hse-review-signoff.md",
+  "requestor": "TO BE SECURED",
+  "verifiedNeed": false,
+  "outputLicense": "CC-BY-4.0"
+}
