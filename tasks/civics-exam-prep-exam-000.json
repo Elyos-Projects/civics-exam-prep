@@ -1,0 +1,34 @@
+{
+  "id": "civics-exam-prep-exam-000",
+  "title": "Pilot-exam + licensing decision (citizenship first; HSE trademark/source framing)",
+  "project": "civics-exam-prep",
+  "type": "research",
+  "lane": "donated",
+  "priority": "high",
+  "domain": ["education", "civic", "exam-prep", "licensing", "content"],
+  "riskTier": "medium",
+  "urgent": false,
+  "deliverable": "document",
+  "tokenEstimate": "small",
+  "status": "open",
+  "context": "Civics-Exam-Prep produces open, accuracy-reviewed practice questions for free high-stakes exams (U.S. naturalization civics test and high-school-equivalency subjects), each item cited to official study materials. The two exams have very different licensing footings: USCIS naturalization materials are U.S. Government works in the public domain (17 U.S.C. section 105), while 'GED' is a registered trademark of GED Testing Service LLC with proprietary, copyright-protected test content. Sequencing and legal posture therefore depend on this decision, which gates all content work. No delivery partner or accuracy reviewer is yet secured.",
+  "objective": "Lock the pilot exam and the project's licensing posture: citizenship first on the clean public-domain footing; HSE reframed as original practice aligned to publicly available standards (no proprietary/trademarked content, nominative trademark use only, non-affiliation disclaimer) and gated behind the M3 IP/legal review. Record the decision rule and the dated partner-acquisition plan.",
+  "acceptanceCriteria": [
+    "Selects citizenship (U.S. naturalization civics test) as the first exam, with rationale recorded (public-domain USCIS sources per 17 U.S.C. 105)",
+    "Records the HSE posture: no proprietary/trademarked content (GED, HiSET, TASC); original items aligned to publicly available standards (e.g., CCR Standards for Adult Education); nominative trademark use only; prominent non-affiliation disclaimer; HSE content gated on the M3 IP/legal review (hse-legal-013)",
+    "States the dated plan and decision rule: pilot exam/licensing by 2026-07-31; accuracy reviewer by 2026-09-30; delivery partner by 2026-12-31; build-vs-pivot decision by ~2027-03-31 (donate vetted bank to an OER home or mothball rather than ship to no beneficiary)",
+    "Confirms output licensing: MIT for code, CC-BY-4.0 for content/data, with attribution to official sources preserved on redistribution",
+    "Notes that the specific delivery partner remains TO BE SECURED (verifiedNeed=false) while the decision rule and deadlines are fixed"
+  ],
+  "resources": [
+    "planning/projects/civics-exam-prep/PLAN.md",
+    "planning/ROADMAP.md",
+    "CLAUDE.md",
+    "docs/good-deed-definition.md",
+    "packages/schema/src/schemas.ts"
+  ],
+  "output": "A recorded decision document fixing citizenship as the pilot exam, the HSE trademark/source framing and IP/legal gate, the dated partner-acquisition plan with a build-vs-pivot rule, and the licensing posture (MIT code / CC-BY-4.0 content) - the decision that gates all downstream content tasks.",
+  "requestor": "TO BE SECURED",
+  "verifiedNeed": false,
+  "outputLicense": "CC-BY-4.0"
+}
