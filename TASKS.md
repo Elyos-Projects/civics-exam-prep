@@ -1,6 +1,6 @@
 # Civics-Exam-Prep — TASKS.md
 
-> Status: Draft · Version: 0.1.0 · Last updated: 2026-06-28 · Owner: TBD (maintainer) · Lane: donated
+> Status: Draft · Version: 0.2.0 · Last updated: 2026-06-29 · Owner: TBD (maintainer) · Lane: donated
 
 Backlog for **Civics-Exam-Prep** (slug: `civics-exam-prep`): open, accuracy-reviewed practice items
 for free high-stakes exams — the **U.S. naturalization civics test** first (clean public-domain
@@ -53,7 +53,7 @@ instructor (MEDIUM-tier sign-off, **TO BE SECURED**); "IP/legal reviewer" gates 
 | ID | Title | Type | Size | Risk | Deliverable | Depends on | Reviewer |
 |---|---|---|---|---|---|---|---|
 | civics-exam-prep-exam-000 | Pilot-exam + licensing decision (citizenship first; HSE trademark/source framing) — gates content | research | small | medium | document | — | Maintainer + IP/legal reviewer |
-| civics-exam-prep-schema-001 | Item-bank schema (stem/options/answer/rationale/sources/dynamicAnswer/lastVerified/validUntil/lang/license) | design-spec | medium | low | document | — | Maintainer |
+| civics-exam-prep-schema-001 | Item-bank schema (stem/options/answer/rationale/sources/testVersion/dynamicAnswer/lastVerified/validUntil/lang/license) | design-spec | medium | low | document | — | Maintainer |
 | civics-exam-prep-repo-002 | Monorepo + pnpm + TS/ESM + CI (build/test/lint + content-schema validation) skeleton | code | small | low | pr | — | Maintainer |
 | civics-exam-prep-rubric-003 | Accuracy-review + non-partisan + sensitivity rubric + "not official/not advice" framing + dynamic-answer policy | design-spec | medium | medium | document | — | Accuracy reviewer |
 | civics-exam-prep-validate-004 | Validation tooling: "no source, no item", single-correct, distractor sanity, readability, staleness — wired into CI | code | medium | low | pr | 001, 002 | Maintainer |
@@ -72,9 +72,12 @@ instructor (MEDIUM-tier sign-off, **TO BE SECURED**); "IP/legal reviewer" gates 
 
 - **civics-exam-prep-schema-001** (item schema)
   - Defines every field incl. `sources[]` (official citation + URL + retrieval date + version +
-    legal-status note), `dynamicAnswer` (`static | officeholder | state-dependent`), `correctAnswer`
-    (forbidden for dynamic items — they reference a lookup/method instead), `lastVerified`/
-    `validUntil`, `language`, `outputLicense`, `reviewedBy`/`signoffVersion`.
+    legal-status note), `testVersion` (`2008 | 2025 | senior-65-20`), `dynamicAnswer`
+    (`static | officeholder | state-dependent`), `correctAnswer` (forbidden for dynamic items — they
+    reference a lookup/method instead), `lastVerified`/`validUntil`, `language`, `outputLicense`,
+    `reviewedBy`/`signoffVersion`.
+  - **Parametrizes question count + pass threshold per `testVersion`** (2008 = 10-of-100/6; 2025 =
+    20-of-128/12; 65/20 = reduced starred bank) — no single static threshold; 2020 is archived.
   - Requires **≥ 1 source per item** and exactly one correct answer for static items.
   - Items stored as version-controlled files so provenance + review are visible in history.
 
@@ -86,18 +89,25 @@ instructor (MEDIUM-tier sign-off, **TO BE SECURED**); "IP/legal reviewer" gates 
     verify current answers with the official source"** labeling.
   - Defines the **dynamic-answer policy** (never serve a stale static answer for officeholder/state
     items; show the "verify current" affordance + official pointer; short re-verification cadence).
+  - Defines the **test-version policy**: a **reviewer-vetted, strictly factual, non-causal "the test
+    changed" explainer** (what/when/who-it-applies-to, sourced to USCIS — no political-causal
+    narrative for the politically charged 2025 redesign) and a **neutral version selector** presented
+    as **information + USCIS link, never a determination** of which test applies to a person (65/20 +
+    exceptions routed to USCIS).
   - Defines version-scoped sign-off, the reviewer veto, and the HIGH-escalation rule for advice-drift.
   - Reviewed + signed off by the accuracy reviewer (recorded in the reviewers ledger).
 
 - **civics-exam-prep-validate-004** (validation + CI gate)
   - CI **fails the build** on any item missing a source, lacking a single correct answer (static),
-    containing duplicate/contradictory options, exceeding the readability target, or past `validUntil`
-    without a flag.
+    containing duplicate/contradictory options, exceeding the readability target, **carrying an
+    invalid/missing `testVersion`**, or past `validUntil` without a flag.
   - Reports citation coverage (target 100%) and a staleness report per run.
 
 **M0 Definition of Done:** schema + validator merged enforcing "no source, no item," single-correct,
-readability, and staleness in CI; accuracy + non-partisan + sensitivity rubric published and
-expert-reviewed; TS/ESM/pnpm skeleton + green CI; **pilot-exam + licensing decision locked**
+readability, staleness, and **`testVersion` validity (2008 + 2025 + 65/20 with per-version
+count/threshold; 2020 archived)** in CI; accuracy + non-partisan + sensitivity rubric published and
+expert-reviewed **(including the reviewer-vetted "the test changed" explainer + neutral
+version-selector framing)**; TS/ESM/pnpm skeleton + green CI; **pilot-exam + licensing decision locked**
 (citizenship first; HSE framing + gate defined); non-official/non-advice framing wired into item +
 app templates.
 
@@ -107,7 +117,7 @@ app templates.
 
 | ID | Title | Type | Size | Risk | Deliverable | Depends on | Reviewer |
 |---|---|---|---|---|---|---|---|
-| civics-exam-prep-sources-005 | USCIS source vetting + provenance recording (2008 + 2020 questions/answers + reading/writing vocab) | data | medium | medium | dataset | 000, 004 | Accuracy reviewer + Maintainer |
+| civics-exam-prep-sources-005 | USCIS source vetting + provenance recording (2008 + 2025 questions/answers + 65/20 subset + reading/writing vocab; 2020 archived) | data | medium | medium | dataset | 000, 004 | Accuracy reviewer + Maintainer |
 | civics-exam-prep-items-006 | Draft original citizenship practice items (MC + flashcard) covering all civics topics, cited to USCIS | writing | large | medium | dataset | 001, 003, 005 | Accuracy reviewer |
 | civics-exam-prep-dynamic-007 | Dynamic-answer subsystem (officeholder/state items) + "verify current" affordance + lookup | code | medium | medium | pr | 004, 005 | Maintainer + Content reviewer |
 | civics-exam-prep-review-008 | Accuracy + non-partisan + sensitivity review of citizenship items (sign-off recorded) | research | medium | medium | document | 006, 007 | Accuracy reviewer |
@@ -116,9 +126,13 @@ app templates.
 **Acceptance criteria — key tasks**
 
 - **civics-exam-prep-sources-005** (USCIS source vetting)
-  - Confirms + records public-domain status for each source; captures **both** the 2008 and 2020
-    civics question/answer sets and the reading/writing vocabulary, noting which applies by filing
-    date.
+  - Confirms + records public-domain status for each source; captures **both live** versions — the
+    **2008** (100 Q) and the **2025** (128 Q) civics question/answer sets — the **65/20** reduced
+    (starred) subset, and the reading/writing vocabulary, noting **which applies by N-400 filing date
+    (2008 = filed before Oct 20 2025; 2025 = filed on/after)** and tagging each item's `testVersion`.
+    The **2020 version is archived (historical only), not a live study target**.
+  - Records the per-version **format** (2008 = 10-of-100/6 to pass; 2025 = 20-of-128/12 to pass) for
+    mock-test parametrization.
   - Provenance recorded per source (document, citation, URL, retrieval date, version, legal-status).
   - Accuracy reviewer confirms the official answers before items are authored.
 
@@ -126,7 +140,9 @@ app templates.
   - Original stems, distractors, and rationales (we do **not** copy any third-party question set);
     every item cites an official USCIS answer (100% citation coverage; validator passes).
   - Covers all official civics topics (principles of democracy, system of government, rights/
-    responsibilities, American history, geography, symbols, holidays) at the plain-language target.
+    responsibilities, American history, geography, symbols, holidays) **for both live versions (2008
+    and 2025)**, each item tagged with its `testVersion`, with the **65/20 starred subset** marked as
+    a filtered view, at the plain-language target.
   - Dynamic items reference the dynamic-answer subsystem, **not** a static key.
 
 - **civics-exam-prep-dynamic-007** (dynamic-answer subsystem)
@@ -141,10 +157,11 @@ app templates.
     items flagged as partisan/opinion or insensitive.
   - Version-scoped sign-off recorded in the reviewers ledger before ship.
 
-**M1 Definition of Done:** USCIS sources vetted + provenance recorded; original citizenship items
-covering all topics drafted, 100% cited, and **accuracy/non-partisan-reviewed (sign-off recorded)**;
-dynamic-answer subsystem live (no stale static answers); reading/writing-vocab support + plain-
-language pass done. **Kill-gate:** if no accuracy reviewer is secured, content does not ship —
+**M1 Definition of Done:** USCIS sources vetted + provenance recorded **for both live versions (2008
++ 2025) and the 65/20 subset (2020 archived)**; original citizenship items covering all topics
+**per version** drafted, 100% cited, `testVersion`-tagged, and **accuracy/non-partisan-reviewed
+(sign-off recorded)**; dynamic-answer subsystem live (no stale static answers); reading/writing
+(English vocabulary) practice + plain-language pass done. **Kill-gate:** if no accuracy reviewer is secured, content does not ship —
 platform/schema hold.
 
 ---
@@ -153,7 +170,7 @@ platform/schema hold.
 
 | ID | Title | Type | Size | Risk | Deliverable | Depends on | Reviewer |
 |---|---|---|---|---|---|---|---|
-| civics-exam-prep-app-010 | No-account offline PWA: practice / mock-test / flashcard modes + persistent non-official labels | code | large | low | pr | 006, 007 | Maintainer |
+| civics-exam-prep-app-010 | No-account offline PWA: practice / mock-test / flashcard / oral-interview modes + neutral version selector + persistent non-official labels | code | large | low | pr | 006, 007 | Maintainer |
 | civics-exam-prep-export-011 | Exporters: printable PDF study sheets + spaced-repetition (CSV/Anki) deck + open JSON dataset | code | medium | low | pr | 006 | Maintainer |
 | civics-exam-prep-i18n-012 | Multilingual study scaffolding (UI + rationale + glossary; test items kept in official language) | writing | medium | medium | translation | 006, 010 | Accuracy reviewer (per language) |
 
@@ -162,9 +179,14 @@ platform/schema hold.
 - **civics-exam-prep-app-010** (practice PWA)
   - Requires **no account**, collects **no PII**, stores progress **local-device only**, works
     **offline**, runs **no ads**.
-  - Practice mode gives immediate feedback + cited rationale; mock-test mode labels its score
-    "practice-only, not an official score"; persistent "not official / not advice / verify with
-    USCIS" labeling on every screen.
+  - Practice mode gives immediate feedback + cited rationale; mock-test mode **samples to the selected
+    version's format (2008 = 10-of-100/6; 2025 = 20-of-128/12)** and labels its score "practice-only,
+    not an official score"; an **oral/interview practice mode** (TTS prompts + self-check, **no
+    AI-scoring claim**); persistent "not official / not advice / verify with USCIS" labeling on every
+    screen.
+  - A **neutral version selector** (2008 / 2025 / 65/20) presents filing-date guidance as
+    **USCIS-sourced information + link, never a determination** of which test applies to the user
+    (eligibility-adjacent → routed to USCIS).
   - Meets initial WCAG 2.2 AA (keyboard + screen-reader usable).
 
 - **civics-exam-prep-i18n-012** (multilingual scaffolding)
@@ -172,10 +194,11 @@ platform/schema hold.
     official test language** (does not translate the answer surface a learner is tested on).
   - Each translated rationale/glossary set is reviewed for accuracy per language; Spanish first.
 
-**M2 Definition of Done:** no-account offline PWA (practice/mock/flashcard) with persistent
-non-official labels shipped; PDF + spaced-repetition + JSON exporters working with license +
-non-official labels; multilingual scaffolding (≥ Spanish) live with test items in the official
-language; WCAG 2.2 AA initial pass.
+**M2 Definition of Done:** no-account offline PWA (practice/mock/flashcard **+ oral-interview** modes,
+**neutral version selector**, **per-version mock-test format**) with persistent non-official labels
+shipped; PDF + spaced-repetition + JSON exporters working with license + non-official labels;
+multilingual scaffolding (≥ Spanish) live with test items in the official language; **read-aloud/TTS
+audio (offline)** for low-literacy/ESL learners; WCAG 2.2 AA initial pass.
 
 ---
 
@@ -226,9 +249,16 @@ labeled non-affiliated/non-official. *(Branch does not start until `hse-legal-01
   - Practice surface + exports meet **WCAG 2.2 AA**; offline verified end-to-end.
   - Independent **≥ 10% accuracy spot-check** passes (0 errors; any found blocks release); learner-
     pilot onboarding runbook written (how a partner runs a cohort, anonymous outcome survey included).
+  - **Official-update watch wired into CI** (monitors the USCIS *Check for Test Updates* / 2025-test
+    pages and **flags content for re-verification** when USCIS publishes a change — turns a future
+    version change into a detected event).
+  - **Partner/org toolkit** (printable class sets + facilitator guide) drafted for CASA / CUNY
+    Citizenship Now / library adult-ed, converting "competitors that are actually partners" into the
+    M5 distribution channel.
 
 **M4 Definition of Done:** item-quality eval green with defects resolved; WCAG 2.2 AA + offline
-verified; independent accuracy spot-check clean; learner-pilot runbook ready.
+verified; independent accuracy spot-check clean; **official-update watch in CI**; **partner/org
+toolkit drafted**; learner-pilot runbook ready.
 
 ---
 
@@ -272,8 +302,9 @@ partner — TO BE SECURED.)*
 **Acceptance criteria — civics-exam-prep-ops-020**
 - Runbook covers deploy, content updates, source re-verification, and partner support.
 - **Content review cadence** defined + scheduled: dynamic/officeholder items on a short cadence and
-  on known changes (elections, official-question-set revisions); static civics facts on a longer
-  cadence; HSE standards re-checked on revision — all driving the staleness fail-safe.
+  on known changes (elections, official-question-set/**test-version** revisions flagged by the
+  **official-update watch**); static civics facts on a longer cadence; HSE standards re-checked on
+  revision — all driving the staleness fail-safe.
 - Outcomes dashboard tracks learners reached, readiness improvement, and voluntary pass reports (not
   engagement metrics); named maintenance rotation; documented, reviewer-gated process for adding
   languages/exams.

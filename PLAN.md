@@ -1,6 +1,6 @@
 # Civics-Exam-Prep — PLAN.md
 
-> Status: Draft · Version: 0.1.0 · Last updated: 2026-06-28 · Owner: TBD (maintainer) · Lane: donated
+> Status: Draft · Version: 0.2.0 · Last updated: 2026-06-29 · Owner: TBD (maintainer) · Lane: donated
 
 Open, accuracy-reviewed practice questions for **free, high-stakes equivalency and citizenship
 exams** — beginning with the **U.S. naturalization civics test** and expanding to **high-school-
@@ -42,6 +42,21 @@ lane is therefore reframed as **original practice aligned to publicly available 
 non-affiliation disclaimer, and **gated behind an explicit IP/legal review** (M3) before any HSE
 content work begins.
 
+The **third** design fact is **test-version currency**, which is itself the project's hardest live
+problem and the strongest validation of its own thesis. The naturalization civics test is **not a
+single static exam**. As of this plan, the live split is **2008** (for N-400s filed before **October
+20, 2025**) vs the **new 2025 USCIS civics test** (for N-400s filed **on or after October 20, 2025**);
+the **2020 redesign is historical only** (administered Dec 1 2020 – Apr 30 2021, then reverted). The
+two live versions differ **structurally**: **2008 = 100-question bank, 10 asked, 6 to pass**; **2025
+= 128-question bank, 20 asked, 12 to pass**; plus a **65/20 special-consideration** reduced (starred)
+bank for applicants aged 65+ with 20+ years as a lawful permanent resident. The bank therefore carries
+a first-class **`testVersion`** dimension (`2008 | 2025 | senior-65-20`) and **parametrizes question
+count and pass threshold per version** — every mock-test, metric, and source-vetting task is
+version-scoped. Because **which version applies to a person is eligibility-adjacent**, version
+selection is presented as **neutral, USCIS-sourced information with a link to USCIS, never as a
+determination** (see §8); and because the **2025 redesign is politically charged**, any "the test
+changed" copy uses a **reviewer-vetted, strictly factual, non-causal** framing (§7–8).
+
 Honesty note: **no partner organization or requestor is yet secured.** Every delivery-dependent task
 is marked `TO BE SECURED` with `verifiedNeed: false` until a real adult-education program, library
 system, literacy council, or immigrant-/refugee-serving organization adopts the bank for its
@@ -77,11 +92,16 @@ informed, civically literate populace.
 
 **The need.** Both exams are high-stakes and *free to take*, yet quality preparation is not freely
 or reliably available. Official study materials exist (USCIS publishes the civics questions, answers,
-and reading/writing vocabulary; HSE exams publish skill descriptors and some free practice) but are
-fragmented, PDF-bound, English-only, and not structured for active recall or spaced practice. The
-free web fills the gap with **unsourced and sometimes inaccurate** "practice tests," often
-ad-supported and inaccessible to screen-reader and low-literacy users. A wrong or outdated answer
-here has real cost: a failed naturalization interview, a re-take fee, delay, and discouragement.
+and reading/writing vocabulary, **including multilingual resources**; HSE exams publish skill
+descriptors and some free practice) but are **fragmented, PDF/list-bound, and not structured for
+active recall or spaced practice**. The gap is therefore **not** "no translations exist" — USCIS
+publishes multilingual resources and free nonprofits (e.g., USAHello) already offer the Q&A in many
+languages — but that **no open, structured, original-rationale, version-aware, spaced-practice item
+bank exists** that learners can study from and that others can reuse. The free web fills the
+remaining gap with **unsourced, often version-confused, and sometimes inaccurate** "practice tests,"
+frequently ad-supported and inaccessible to screen-reader and low-literacy users. A wrong or outdated
+answer here has real cost: a failed naturalization interview, a re-take fee, delay, and
+discouragement.
 
 **Verified need / partner:** **TO BE SECURED.** No specific adult-education program, library,
 literacy council, community college, or immigrant-/refugee-serving nonprofit has yet agreed to adopt
@@ -104,6 +124,10 @@ Until one is secured, the project builds the agent-neutral platform, the item sc
   review**, and that civic content is **non-partisan and factual**.
 - Handle **dynamic answers** (officeholders that change, and answers that depend on the learner's
   state) correctly, with a "verify the current answer" affordance and a runtime staleness fail-safe.
+- Be **version-correct and version-aware**: track the live **2008** and **2025** USCIS test versions
+  (plus the **65/20** senior special-consideration bank), parametrize question count and pass
+  threshold per version, treat **2020 as archived**, and present version selection as **neutral,
+  USCIS-sourced information (not a determination of which test applies to a person)**.
 - Deliver the bank through a **free, no-account, offline-capable, accessible** practice app plus
   **portable exports** (printable PDF, spaced-repetition deck, open dataset).
 - Extend to **HSE-aligned** subject practice **only behind an explicit IP/legal review**, as
@@ -117,7 +141,9 @@ Until one is secured, the project builds the agent-neutral platform, the item sc
   affiliated with, endorsed by, or representing USCIS, GED Testing Service, or any testing body.
 - **Not** an official test, a score predictor presented as authoritative, or a guarantee of passing.
 - **Not** legal or immigration advice; not a substitute for USCIS guidance, an accredited
-  representative, or an attorney. (We point learners to official sources for binding answers.)
+  representative, or an attorney. (We point learners to official sources for binding answers.) In
+  particular, **not** a determiner of **which test version applies to a specific person** or of
+  65/20 / disability-exception eligibility — these are eligibility-adjacent and routed to USCIS.
 - **Not** a partisan civics product: no opinion, advocacy, candidate/party framing, or
   "interpretation" beyond what official sources state.
 - **Not** a data-harvesting study app: no accounts required, no learner PII collected to use the
@@ -140,6 +166,7 @@ Outcome-centric and beneficiary-first. Engagement vanity metrics (DAU, pageviews
 | Non-partisanship | n/a | **0** items flagged as opinion/advocacy/partisan framing in review | Non-partisan rubric review + reviewer audit |
 | Dynamic-answer correctness | n/a | **0** state/officeholder-dependent items served as a single static "correct" answer without the "verify current" affordance | Schema constraint + staleness test + audit |
 | Stale-content containment | n/a | **0** items served past their `validUntil` without auto-flag/withhold + re-verification | Staleness test against `lastVerified`/`validUntil` |
+| Version-correctness | n/a | **0** items mis-tagged by `testVersion`; **0** mock tests using the wrong format/threshold for the selected version (2008 = 10-of-100/6-to-pass; 2025 = 20-of-128/12-to-pass; 65/20 reduced bank) | Schema `testVersion` constraint + mock-test format test + reviewer audit |
 | Readability of items + rationales | n/a | citizenship items at a **plain-language target (≈ grade 6–8)** unless the official term requires otherwise | Automated readability check + reviewer judgment |
 | Accessibility | n/a | practice surface meets **WCAG 2.2 AA**; works **offline**; usable with screen reader + keyboard | Automated + manual a11y audit |
 | Learners reached through a partner | 0 | ≥ **50** learners use the bank in a pilot cohort | Partner-reported (privacy-preserving counts) |
@@ -158,11 +185,18 @@ readiness-improvement target met — not merely a merged dataset.
 
 - An **item-bank schema** (machine-readable) with stem, options, correct answer, rationale,
   per-item **official-source citation + provenance**, exam, topic, difficulty, language,
-  `dynamicAnswer` flag, and `lastVerified`/`validUntil`.
+  `testVersion` (`2008 | 2025 | senior-65-20`), `dynamicAnswer` flag, and `lastVerified`/`validUntil`.
+  Question count and pass threshold are **parametrized per `testVersion`** (2008 = 10-of-100/6;
+  2025 = 20-of-128/12; 65/20 = reduced starred bank).
 - **Validation tooling** in CI: schema validity, exactly-one-correct-answer, citation presence,
   distractor sanity, readability, and dynamic-answer/staleness checks.
 - The **citizenship** practice bank: original multiple-choice + flashcard items covering all
-  official civics topics, cited to USCIS answers, plus reading/writing vocabulary study support.
+  official civics topics for **both live versions (2008 and 2025)**, cited to USCIS answers, with the
+  **65/20 senior special-consideration subset** offered as a first-class filtered view, plus
+  **reading & writing (English vocabulary) practice** as a deliverable (not just incidental support).
+- An **oral/interview practice mode** (TTS/audio prompts + self-check) reflecting that the real test
+  is an **oral interview**, clearly labeled "practice only, not an official score" and making **no
+  AI-scoring claim**.
 - **Dynamic-answer handling**: officeholder/state-dependent items rendered with a "verify the
   current answer for your state/date" affordance and a maintained lookup, never a stale static
   answer presented as authoritative.
@@ -216,11 +250,13 @@ are human-reviewed before publish** — the LLM never has final say on a correct
 **Components**
 
 1. **Item schema + content store (`/content`, `/schema`) — built first.** Each item is a record:
-   `id`, `exam`, `topic`, `stem`, `options[]`, `correctAnswer`, `rationale`, `sources[]` (official
-   citation + URL + retrieval date + license/legal-status note), `difficulty`, `language`,
-   `dynamicAnswer` (bool + kind: `officeholder` | `state-dependent` | `static`), `lastVerified`,
-   `validUntil`, `reviewedBy`/`signoffVersion`. Items live as files so provenance and review are
-   visible in version history.
+   `id`, `exam`, `testVersion` (`2008 | 2025 | senior-65-20`), `topic`, `stem`, `options[]`,
+   `correctAnswer`, `rationale`, `sources[]` (official citation + URL + retrieval date +
+   license/legal-status note), `difficulty`, `language`, `dynamicAnswer` (bool + kind: `officeholder`
+   | `state-dependent` | `static`), `lastVerified`, `validUntil`, `reviewedBy`/`signoffVersion`. The
+   bank parametrizes **question count + pass threshold per `testVersion`** (2008 = 10-of-100/6; 2025 =
+   20-of-128/12; 65/20 = reduced starred bank) rather than assuming one static format. Items live as
+   files so provenance and review are visible in version history.
 
 2. **Validation + provenance enforcement (`/tools/validate`) — CI gate.** Enforces: schema
    validity; exactly one correct answer (or, for dynamic items, an explicit dynamic-answer record
@@ -236,10 +272,15 @@ are human-reviewed before publish** — the LLM never has final say on a correct
    renders a **"verify the current answer for your state/today"** affordance with a pointer to the
    official source. These items are **never** shipped as a single static correct answer.
 
-4. **Practice surface (`/app`) — PWA.** No account, no PII, offline-capable. Modes: **practice**
-   (immediate feedback + cited rationale), **mock test** (timed/sampled, score is clearly
-   "practice-only, not an official score"), **flashcard/recall**. Persistent "Study material — not
-   an official test; not legal/immigration advice; verify current answers with USCIS" labeling.
+4. **Practice surface (`/app`) — PWA.** No account, no PII, offline-capable. A **neutral version
+   selector** lets the learner pick **2008 / 2025 / 65/20** with USCIS-sourced "if your N-400 was
+   filed before/after Oct 20 2025…" guidance and a USCIS link — **information, never a determination**
+   of which test applies to them (eligibility-adjacent → routed to USCIS). Modes: **practice**
+   (immediate feedback + cited rationale), **mock test** (timed/sampled to the **selected version's
+   format** — 10-of-100/6 vs 20-of-128/12 — score clearly "practice-only, not an official score"),
+   **flashcard/recall**, and an **oral/interview practice mode** (TTS prompts + self-check, since the
+   real test is oral; no AI-scoring claim). Persistent "Study material — not an official test; not
+   legal/immigration advice; verify current answers and which test applies with USCIS" labeling.
 
 5. **Exporters (`/tools/export`).** Printable **PDF** study sheets (for learners without reliable
    devices), a **spaced-repetition deck** (CSV/Anki-compatible), and the **open JSON dataset** for
@@ -249,6 +290,26 @@ are human-reviewed before publish** — the LLM never has final say on a correct
    reading level, simple bias/sensitivity scan) plus an LLM-judge pass that **flags for human
    review** (never auto-publishes). Reports defects per release.
 
+7. **Official-update watch (`/tools/watch`) — CI.** Monitors the USCIS *Check for Test Updates* and
+   2025-test pages and flags affected content for **re-verification** when USCIS publishes a change.
+   This turns "the document went stale on its own currency axis" (the v0.1 → 2025 miss) into a
+   **detected event** next time, feeding the staleness fail-safe and the review cadence.
+
+**Claude API leverage (assistive only; human-gated).** Any AI drafting uses Anthropic Claude behind
+the thin provider-neutral client (model/pricing per the Claude API skill). High-value, human-gated
+uses: **drafting original items** (stems, plausible distractors, plain-language rationales) *from*
+the official answers — never copying third-party question sets; **plain-language rewriting** to the
+grade 6–8 target; **translation drafting** of UI/rationales/glossary (with human QA per language);
+**spaced-repetition + difficulty calibration** proposals; and the **LLM-judge item-quality eval**
+(flags single-correct violations, weak distractors, readability misses, possible bias → flags for a
+human). **Where Claude must NOT have final say:** **accuracy to the official test** (a human verifies
+every "correct answer" against current USCIS material — Claude drafts, it never certifies); **which
+test version applies to a person** (eligibility-adjacent → route to USCIS, never decide); the
+**non-partisan judgment** (the reviewer rubric is the authority); **translation QA** (a qualified
+human verifies each language); and it **never fabricates** questions, answers, citations, or sources
+("no source, no item" is CI-enforced, not model-trusted) and **never gives individualized
+legal/immigration advice** (escalate, don't generate).
+
 **Key decisions**
 
 - **Provenance + accuracy are release gates, not documentation** — enforced in CI and review.
@@ -256,6 +317,8 @@ are human-reviewed before publish** — the LLM never has final say on a correct
 - **Original items only** — we author distractors and rationales; we cite official *answers*, we do
   not copy proprietary test items.
 - **Dynamic answers are first-class**, never silently static.
+- **Version-awareness is first-class** — 2008 + 2025 (+ 65/20) tracked with format/threshold
+  parametrized; 2020 archived; version selection is neutral USCIS-sourced info, not a determination.
 - **Privacy by construction** — no accounts, no learner PII, no ads (see §14).
 - Agent-neutral core; LLM drafting is assistive and always human-reviewed.
 
@@ -266,13 +329,29 @@ are human-reviewed before publish** — the LLM never has final say on a correct
 THIS IS THE CRITICAL SECTION. Be specific and conservative.
 
 **Source material — citizenship (clean footing).** The U.S. naturalization civics test materials —
-the official civics questions and answers (both the **2008** and **2020** versions; the version a
-learner faces depends on their filing date), the **reading and writing vocabulary lists**, and
-related USCIS study materials — are **works of the U.S. federal government and are in the public
-domain** (17 U.S.C. § 105). We may freely reuse the **facts and official answers**; we still **cite
-and link** each source and record provenance (source name, document, citation/URL, retrieval date,
-version, license/legal-status note). We author **original** stems, distractors, and rationales rather
-than copying any third party's question set.
+the official civics questions and answers, the **reading and writing vocabulary lists**, and related
+USCIS study materials — are **works of the U.S. federal government and are in the public domain**
+(17 U.S.C. § 105). We may freely reuse the **facts and official answers**; we still **cite and link**
+each source and record provenance (source name, document, citation/URL, retrieval date, version,
+license/legal-status note). We author **original** stems, distractors, and rationales rather than
+copying any third party's question set.
+
+**Test versions (currency — read carefully).** The civics test is **not static** and the version a
+learner faces **depends on their N-400 filing date**:
+
+- **2008 version** — applies to N-400s filed **before October 20, 2025**. Format: **100-question
+  bank, 10 asked orally, 6 correct to pass**.
+- **2025 version** — the **new USCIS civics test**, applies to N-400s filed **on or after October 20,
+  2025**. Format: **128-question bank, 20 asked orally, 12 correct to pass**.
+- **65/20 special consideration** — applicants aged **65+ with 20+ years as an LPR** study a
+  **reduced (starred) subset**; carried as a first-class filtered view.
+- **2020 version — historical only.** It was administered only **Dec 1 2020 – Apr 30 2021**, then
+  reverted to 2008; it is **archived, not a live study target**.
+
+The bank encodes this with a **`testVersion`** field and **parametrizes question count + pass
+threshold per version** (no single static threshold). Source vetting captures both **live** versions
+plus the 65/20 subset. Confirm current USCIS guidance at content time and re-verify via the
+official-update watch (§6.7).
 
 **Source material — HSE (encumbered; gated).** **"GED®" is a registered trademark of GED Testing
 Service LLC**, a commercial joint venture (American Council on Education + Pearson); the actual GED
@@ -307,10 +386,15 @@ Any optional outcome survey is **anonymous, opt-in, partner-mediated, and aggreg
 individual learner record, no immigration status, no contact info. No secrets, tokens, or PII in
 logs, receipts, or committed files (Elyos rule).
 
-**Non-partisanship & sensitivity.** Civic items state only what official sources state; **no
-opinion, advocacy, party/candidate framing, or interpretation**. A non-partisan rubric and reviewer
-sign-off are required (§8). Content avoids demeaning, exclusionary, or culturally insensitive framing
-of immigrants or any group (sensitivity review in the rubric).
+**Non-partisanship & sensitivity (including a meta-layer).** Civic items state only what official
+sources state; **no opinion, advocacy, party/candidate framing, or interpretation**. A non-partisan
+rubric and reviewer sign-off are required (§8). Content avoids demeaning, exclusionary, or culturally
+insensitive framing of immigrants or any group (sensitivity review in the rubric). **Meta-layer:**
+the **2025 redesign is itself politically charged** (longer/harder, widely covered through a partisan
+lens), so any learner-facing "the test changed / which version you take" copy must use a
+**reviewer-vetted, strictly factual, non-causal** framing — **what changed, when, and who it applies
+to, sourced to USCIS**, with **no political-causal narrative**. This explainer is an explicit rubric
+item, and version selection is presented as neutral information routed to USCIS (not advice; see §8).
 
 **Attribution.** Items cite official sources; redistribution preserves CC-BY attribution. Reviewers
 are credited (with consent) in a reviewers ledger, version-scoped.
@@ -333,12 +417,16 @@ scope unless a credentialed reviewer is engaged.
   naturalization-prep instructor (and, for HSE, a relevant subject-matter educator) — recorded
   before any item bank ships. **No reviewer, no ship.** Sign-off is **version-scoped** (attaches to a
   specific item version + citation set; edits require re-sign-off, dovetailing with staleness dates).
-- **Non-partisan + sensitivity review** against the published rubric for all civic content.
+- **Non-partisan + sensitivity review** against the published rubric for all civic content —
+  **including the "the test changed" explainer and the version selector**, which must be strictly
+  factual, USCIS-sourced, non-causal, and framed as **information, not a determination** of which
+  test applies to a given person (eligibility-adjacent → routed to USCIS).
 - **IP/legal clearance** for the HSE lane (trademark + source-reuse) before HSE content begins.
 - **Accessibility review** (WCAG 2.2 AA) for the practice surface and exports.
 
 **Persistent labeling:** every surface shows **"Study material — not an official test; not legal/
-immigration advice; verify current answers with the official source."**
+immigration advice; verify current answers and which test version applies to you with the official
+source (USCIS)."**
 
 **Definition of Shipped (project):** a real partner adopts the bank; real learners use it to prepare;
 accuracy + non-partisanship are independently verified; citation/staleness gates are in force; and at
@@ -354,23 +442,29 @@ review; eval + hardening; partner adoption last (gated on a secured partner).
 - **M0 — Foundation, schema & accuracy/IP gates (cold-start).**
   *Goal:* the item schema, validation/provenance CI gate, accuracy + non-partisan rubric, and the
   licensing posture exist before any content. *Exit:* repo + CI green; item schema + validator
-  merged enforcing "no source, no item," single-correct, readability, and staleness; accuracy-review
-  + non-partisan + sensitivity rubric published; **pilot exam + licensing decision locked
-  (citizenship first; HSE framing decided)**; non-official/non-advice framing wired into templates.
+  merged enforcing "no source, no item," single-correct, readability, staleness, **and `testVersion`
+  validity with per-version question-count/pass-threshold parametrization (2008 + 2025 + 65/20; 2020
+  archived)**; accuracy-review + non-partisan + sensitivity rubric published **including the
+  reviewer-vetted "the test changed" explainer + neutral version-selector (not-advice) framing**;
+  **pilot exam + licensing decision locked (citizenship first; HSE framing decided)**;
+  non-official/non-advice framing wired into templates.
 
 - **M1 — Citizenship content (accuracy-reviewed).**
   *Goal:* the citizenship practice bank, cited and expert-reviewed, with dynamic answers handled.
-  *Exit:* USCIS sources vetted + provenance recorded; original items covering all official civics
-  topics drafted and **accuracy-reviewed (sign-off recorded)**; reading/writing vocab support;
-  **dynamic-answer subsystem live** (officeholder/state items never static); 100% citation coverage;
-  plain-language + initial a11y pass. **Kill-gate:** if no accuracy reviewer is secured, content does
-  not ship — platform/schema hold.
+  *Exit:* USCIS sources vetted + provenance recorded **for both live versions (2008 + 2025) and the
+  65/20 subset**; original items covering all official civics topics **per version** drafted and
+  **accuracy-reviewed (sign-off recorded)**; **reading & writing (English vocabulary) practice** as a
+  deliverable; **dynamic-answer subsystem live** (officeholder/state items never static); 100%
+  citation coverage; plain-language + initial a11y pass. **Kill-gate:** if no accuracy reviewer is
+  secured, content does not ship — platform/schema hold.
 
 - **M2 — Delivery (app + exports + i18n scaffolding).**
   *Goal:* learners can actually study, online or offline, in their language. *Exit:* no-account
-  offline PWA (practice/mock/flashcard modes) with persistent non-official labels; PDF + spaced-
-  repetition + JSON exports; multilingual UI/rationale/glossary scaffolding (test items in official
-  language); WCAG 2.2 AA initial pass.
+  offline PWA (practice/mock/flashcard **+ oral/interview practice** modes, with a **neutral
+  version selector** and **per-version mock-test format**) with persistent non-official labels; PDF +
+  spaced-repetition + JSON exports; multilingual UI/rationale/glossary scaffolding (test items in
+  official language); **read-aloud/TTS audio** (offline) for low-literacy/ESL learners; WCAG 2.2 AA
+  initial pass.
 
 - **M3 — HSE-aligned content (gated on IP/legal review).**
   *Goal:* extend to HSE subjects **safely**. *Exit:* **IP/legal review cleared** (trademark posture
@@ -381,7 +475,10 @@ review; eval + hardening; partner adoption last (gated on a secured partner).
 - **M4 — Eval, hardening & pilot readiness.**
   *Goal:* prove item quality and harden for real learners. *Exit:* item-quality eval (single-correct,
   distractor plausibility, readability, bias scan) green with defects resolved; full WCAG 2.2 AA +
-  offline verified; independent ≥ 10% accuracy spot-check passes; learner-pilot runbook ready.
+  offline verified; independent ≥ 10% accuracy spot-check passes; **official-update watch wired into
+  CI (monitors the USCIS update/2025 pages → flags content for re-verification)**; **partner/org
+  toolkit (printable class sets + facilitator guide)** drafted for CBO/library adult-ed; learner-pilot
+  runbook ready.
 
 - **M5 — Partner adoption & handoff (the deed).**
   *Goal:* real learners benefit. *Exit (Definition of Shipped):* a secured partner + steward; a pilot
@@ -392,13 +489,85 @@ review; eval + hardening; partner adoption last (gated on a secured partner).
 - **M6 — Sustain & scale (post-delivery).**
   *Goal:* durable maintenance and careful expansion (more languages/exams). *Exit:* maintenance
   rotation + ops runbook + outcomes dashboard; **content review cadence** (dynamic-answer refresh on
-  schedule + on known changes; official-answer/standard-change re-verification); gated expansion
-  process.
+  schedule + on known changes; official-answer/standard/**test-version**-change re-verification driven
+  by the official-update watch); gated expansion process (more languages/exams, and the reusable
+  engine for other countries' citizenship tests).
 
 Dependencies flow M0 → M1 → M2 → M4 → M5; **M3 (HSE) branches off M0 but is gated on its own IP/legal
 review** and does not block citizenship delivery. The **pilot-exam + licensing decision is made in M0
 and gates content**; M1 content blocks on the secured accuracy reviewer; M5 blocks on a secured
 partner.
+
+---
+
+## Competitive landscape & differentiation
+
+The naturalization-prep space is crowded but **structurally under-served on exactly the axes this
+project gates on** (provenance, version-correctness, openness, accessibility). Mapping the field:
+
+- **Official — USCIS Citizenship Resource Center** (uscis.gov/citizenship). The authoritative, free,
+  public-domain source — now with multilingual resources and the 2025 materials. PDF/list-bound, not
+  interactive, no spaced repetition, not built for low-literacy active recall. **This is the
+  source-of-truth to cite, not a competitor to beat.**
+- **USAHello** (free nonprofit). The closest mission-aligned peer: free, **Q&A in 17 languages with
+  audio**, learner-friendly. *Weakness:* largely **reproduces official Q&A** rather than an original,
+  provenance-bearing, openly-licensed, machine-readable bank; limited spaced-repetition/assessment;
+  not an open dataset others can reuse.
+- **Citizenry (app)** — most feature-rich: ad-free, supports **both 2008 and 2025**, AI mock
+  interviews, Spanish virtual agent, flashcards/audio. *Weakness:* **closed-source, app-store walled,
+  not open data, not publicly accessibility-audited**, single-vendor trust.
+- **Citizen Now / "US Citizenship Test 2026 Plus" and SEO practice sites** — broad reach, AI/spoken
+  feedback or large free question sets. *Weakness:* ads or paid tiers, closed, **unsourced**,
+  inconsistent on version, generally not accessibility-audited — the exact "ad-laden, unsourced
+  practice test" failure this project targets.
+- **Quizlet / Anki community decks** — free, spaced-repetition-native, huge install base. *Weakness:*
+  **no provenance, error-prone, version-confused** (decks mixing 100/128/"2024-2025"/state variants);
+  a learner cannot tell which deck matches their test. **This is the clearest opening.**
+- **iCivics / Khan Academy** — excellent free **K-12/general civics**, *not* naturalization prep:
+  adjacent allies and style references, not competitors.
+- **CBOs & libraries — CASA, CUNY Citizenship Now!, YMCA New Americans, public library adult-ed** —
+  run in-person classes + application help. **Not competitors — they are the M5 delivery partners**
+  (distribution, not rivalry).
+
+**Differentiation (how this wins).** The durable edge is **not another study app** but an **open,
+CC-BY, provenance-bearing, version-aware item bank** that becomes **reusable infrastructure** —
+**distribution by reuse**:
+
+1. **Provenance-as-a-gate + independent accuracy review** — a public trust artifact ("every answer
+   cited to USCIS; reviewer signed off; spot-checked") no competitor offers.
+2. **Open, reusable, version-aware dataset (CC-BY)** — libraries, CBOs, Quizlet/Anki authors, *and
+   even rival apps* can ingest it; the bank becomes shared infrastructure, not a walled product.
+3. **Correctness on the exact axis everyone else fails** — 2008/2025 version-awareness + 65/20 subset
+   + staleness fail-safe + dynamic-answer subsystem, versus a version-confused field.
+4. **Partner-delivered, not direct-to-consumer** — shipped through trusted CBOs/libraries (CASA, CUNY
+   Citizenship Now, library systems) — a distribution + trust moat the app stores can't match.
+5. **Accessibility / offline / print + privacy-by-construction** — for the device-poor, low-literacy,
+   ESL learners the commercial apps and ad-laden sites under-serve.
+
+---
+
+## Adjacent opportunities
+
+The reusable assets here (the provenance-gated rubric, the version/staleness/dynamic-answer
+machinery, the human-verified translation pipeline, the exporters) make several **parallel and
+perpendicular** spin-offs cheap — to be pursued only after citizenship is stable and each on its own
+review/licensing footing:
+
+- **know-your-rights** (parallel) — the same provenance-gated, multilingual, plain-language,
+  **not-advice** pattern applied to immigrant/tenant/worker rights; high reuse of the rubric +
+  labeling + translation-QA pipeline.
+- **open-flashcards** (perpendicular) — extract the **item-bank + spaced-repetition engine** as a
+  standalone open library + open deck format (Anki/CSV-compatible) usable by any subject.
+- **vital-info-translations** (parallel) — reuse the **human-verified translation pipeline** for
+  benefits/health/legal public information.
+- **Reusable exam-prep engine** — parametrize the engine (schema, validator, dynamic answers,
+  staleness, version-awareness, exporters) for **other countries' citizenship tests** (Life in the
+  UK, Canada, Australia, the German Einbürgerungstest) and other public-standard exams — most are
+  equally open-content-friendly and equally under-served.
+- **MCP server (`civics-bank`)** — expose the vetted bank over MCP: version-aware question sampling,
+  per-item provenance, and a current-officeholder lookup, so any agent or third-party app can query
+  **verified, cited** questions; a second authoring-assist MCP could draft items against the rubric
+  **for human review** (never auto-publish).
 
 ---
 
@@ -449,10 +618,11 @@ real reviewer.
 - **External services:** static hosting/CDN for the PWA; Anthropic Claude API (assistive item
   drafting only, behind the neutral LLM client; never the final authority on a correct answer). No
   database or auth service is required for the core (no accounts).
-- **Datasets / sources:** USCIS naturalization civics materials (2008 + 2020 questions/answers,
-  reading/writing vocabulary) — public domain, provenance recorded; for HSE, **only** public-domain
-  / openly-licensed skill standards (e.g., CCR Standards for Adult Education) — pending IP/legal
-  clearance.
+- **Datasets / sources:** USCIS naturalization civics materials — **2008** (100 Q) and **2025** (128
+  Q) questions/answers, the **65/20** reduced subset, and reading/writing vocabulary — public domain,
+  provenance recorded (2020 archived); the USCIS *Check for Test Updates* page (official-update
+  watch); for HSE, **only** public-domain / openly-licensed skill standards (e.g., CCR Standards for
+  Adult Education) — pending IP/legal clearance.
 - **Upstream/reference:** OER reuse channels (library consortia, adult-literacy commons) as potential
   pivot homes; spaced-repetition ecosystem (Anki-compatible export).
 - **Elyos pieces:** `packages/schema` (Task JSON), `CLAUDE.md` work rules + refusal guardrails,
@@ -474,7 +644,10 @@ real reviewer.
 | Misread as official / as legal-immigration advice | Medium | High | Persistent "not official / not advice / verify with USCIS" labeling on every surface and export; route to official sources | Maintainer |
 | No accuracy reviewer secured → M1 content blocked | Medium | High | Recruit via adult-ed programs, civics educators, naturalization clinics; do not ship content without sign-off (hard gate) | Maintainer / Steward |
 | No delivery partner secured → cannot reach Definition of Shipped | High | High | Honest `TO BE SECURED`/`verifiedNeed:false`; dated partner-acquisition plan + build-vs-pivot rule (donate bank to an OER home or mothball, not ship to no one) | Steward / Maintainer |
-| Official question set / answers change (USCIS revision) | Medium | High | Track both 2008 + 2020 versions; staleness fail-safe; review cadence + on-change re-verification + re-sign-off | Content reviewer |
+| Official question set / answers change (USCIS revision) | Medium | High | Track both **live** versions (2008 + 2025) + 65/20 subset (2020 archived); **`testVersion`-scoped** content; **official-update watch in CI** flags changes; staleness fail-safe; review cadence + on-change re-verification + re-sign-off | Content reviewer |
+| Content goes stale on its own currency axis (the v0.1 → 2025 miss) / learner studies the wrong version | High | High | `testVersion` field + per-version format/threshold parametrization; official-update watch turns a version change into a detected event; staleness fail-safe withholds stale items; reviewer audit of version tags | Maintainer / Content reviewer |
+| "Which test do I take?" drifts from neutral info into immigration advice | Medium | High | Version selector is **USCIS-sourced information + link, never a determination**; 65/20 / exceptions routed to USCIS; reviewer-vetted non-causal "the test changed" explainer; HIGH-escalation rule on advice-drift | Content reviewer / Maintainer |
+| 2025 redesign's political charge bleeds into copy (perceived partisanship) | Medium | High | Strictly factual, non-causal, USCIS-sourced framing of the version change as an explicit rubric item; non-partisan reviewer sign-off; no political-causal narrative | Content reviewer |
 | Inaccessible to target learners (low literacy, screen-reader, no device) | Medium | High | Plain-language target; WCAG 2.2 AA; offline PWA; printable PDF export for device-poor learners | Maintainer / a11y reviewer |
 | LLM-drafted item hallucinates a fact or distractor | Medium | High | LLM is assistive only; human accuracy review is mandatory before publish; citation required; eval bias/quality scan | Maintainer / Accuracy reviewer |
 
@@ -534,8 +707,18 @@ appear.
 - **Which languages first** for multilingual study scaffolding (Spanish almost certainly first; then
   per partner demand) — and the policy on keeping **test items** in the official language while
   translating **rationale/glossary**.
-- **2008 vs 2020 civics version:** present both and select by the learner's filing date, or default
-  to one with the other available? Confirm current USCIS guidance at content time.
+- **2008 vs 2025 civics version (resolved direction; confirm specifics):** build **2008 + 2025**
+  (plus the **65/20** subset) and treat **2020 as archived** — confirmed as the working model. Open:
+  whether the version selector defaults to one with the other available, and how to present
+  filing-date guidance as **neutral information** (USCIS-sourced + link) without crossing into
+  immigration advice (governance + reviewer call).
+- **Oral/interview mode scope:** how far the TTS/audio interview-practice mode should go while keeping
+  the firm **"no official-score / no AI-scoring claim"** boundary.
+- **Audio/TTS:** quality, licensing, and offline packaging of read-aloud across many languages.
+- **Official-update watch:** whether to auto-monitor the USCIS *Check for Test Updates* feed, and the
+  exact re-verification cadence per item type.
+- **Engine spin-off:** which country/exam (Life in the UK, Canada, Australia, German
+  Einbürgerungstest) is the first reusable-engine spin-off, and that content's licensing/provenance.
 - **Pass-outcome collection ethics:** how to record pass outcomes without ever touching immigration
   status or PII — keep strictly anonymous/voluntary/aggregate; confirm with partner + governance.
 - **Lane:** donated by default; is there a future funded lane (with a hard budget cap) for expert
@@ -555,8 +738,18 @@ appear.
 - Task JSON schema: `packages/schema/src/schemas.ts`
 - House-style sibling plans: `planning/projects/public-official-guide/{PLAN,TASKS}.md`,
   `planning/projects/oer-math/*` (educational-content sibling)
-- Citizenship source (public domain): USCIS naturalization civics test materials (2008 + 2020
-  questions/answers + reading/writing vocabulary); U.S. Government works per 17 U.S.C. § 105
+- Competitive + improvement analysis (source of truth for v0.2): `COMPETITIVE-ANALYSIS.md`
+- Citizenship source (public domain): USCIS naturalization civics test materials — **2008** (100 Q,
+  10 asked, 6 to pass) + **2025** (128 Q, 20 asked, 12 to pass) questions/answers, the **65/20**
+  reduced subset, + reading/writing vocabulary; U.S. Government works per 17 U.S.C. § 105 (2020
+  version archived)
+  - USCIS 2025 Civics Test: https://www.uscis.gov/citizenship-resource-center/naturalization-test-and-study-resources/2025-civics-test
+  - USCIS 128 Questions & Answers (2025): https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf
+  - USCIS Check for Test Updates: https://www.uscis.gov/citizenship/find-study-materials-and-resources/check-for-test-updates
+  - USCIS Multilingual Resources: https://www.uscis.gov/citizenship/find-study-materials-and-resources/citizenship-multilingual-resources
+- Landscape references: USAHello (free, 17-language Q&A); Citizenry (closed app, 2008+2025);
+  Quizlet/Anki (unsourced, version-confused); iCivics / Khan Academy (general civics, adjacent);
+  CASA / CUNY Citizenship Now! / libraries (delivery partners) — full URLs in `COMPETITIVE-ANALYSIS.md`
 - HSE standards (public domain): College & Career Readiness Standards for Adult Education (U.S. Dept.
   of Education) — *pending IP/legal review*
 - Trademark caution: "GED®" is a registered trademark of GED Testing Service LLC (ACE + Pearson);
@@ -589,8 +782,9 @@ merely proposed):
    applied in §7, §8, §4, `rubric-003`.
 9. **Privacy-by-construction hardened:** no accounts, no PII, local-device-only progress, anonymous/
    aggregate outcome surveys — applied in §7, §14.
-10. **Both 2008 and 2020 civics versions** explicitly tracked (learner faces version by filing date)
-    — applied in §7, Open questions, Risks.
+10. **Live civics versions** explicitly tracked, learner faces version by filing date — **corrected
+    in v0.2 to 2008 + 2025 (+ 65/20 subset; 2020 archived)** with `testVersion` + per-version
+    format/threshold — applied in §7, Open questions, Risks (see Changelog v0.2).
 11. **Plain-language readability target** added as a CI check + metric (grade ≈ 6–8) for a low-
     literacy, ESL audience — applied in §4, §6.2, §8.
 12. **Accessibility (WCAG 2.2 AA) + offline PWA + printable PDF** for device-poor learners made
@@ -665,3 +859,54 @@ Shipped); Elyos governance to confirm the HSE framing and the dynamic-answer mai
 **Verdict:** Plan is internally consistent and ready to drive the TASKS backlog. No item ships
 without citation + accuracy sign-off; no HSE content begins without IP clearance; no "shipped"
 without a real partner and recorded learner outcomes.
+
+---
+
+## Changelog — v0.2 (analysis merged)
+
+Merged the findings of `COMPETITIVE-ANALYSIS.md` (2026-06-29) into the plan. Surgical/additive; no
+guardrails weakened; no facts/questions invented.
+
+**Correctness & currency fixes applied**
+- **CRITICAL — test-version model de-staled:** replaced the obsolete **2008 + 2020** model with the
+  live **2008 + 2025** split (2020 is historical only, administered Dec 1 2020 – Apr 30 2021 then
+  reverted; the **new 2025 USCIS test took effect for N-400s filed on/after Oct 20 2025**). Encoded
+  the **structural differences** — **2008 = 100 Q / 10 asked / 6 to pass**; **2025 = 128 Q / 20 asked
+  / 12 to pass** — plus the **65/20 senior special-consideration** reduced bank. Added a `testVersion`
+  (`2008 | 2025 | senior-65-20`) field and **parametrized question count + pass threshold per
+  version** across schema, Exec summary, Goals, Scope, §6, §7, Roadmap, Dependencies, Risks, Open
+  questions, References, and Appendix A.
+- **Multilingual claim corrected (Finding 2):** dropped the inaccurate "official materials are
+  English-only" framing; USCIS publishes multilingual resources and USAHello offers the Q&A in 17
+  languages — the real gap is an **open, structured, original-rationale, version-aware, spaced-practice
+  bank**, so the multilingual value is re-aimed at **plain-language rationales + glossary**.
+- **Non-partisan meta-layer (Finding 3):** added a **reviewer-vetted, strictly factual, non-causal**
+  framing requirement for the politically charged 2025 redesign / "the test changed" explainer (§7,
+  §8, rubric, Risks).
+- **Not-advice boundary at "which test do I take?" (Finding 4):** version selection is presented as
+  **neutral USCIS-sourced information + link, never a determination**; 65/20 and exceptions routed to
+  USCIS (Exec summary, Non-goals, §6.4, §8, Risks).
+- **Assessment format (Finding 5):** mock-test mode parametrized to the selected version's format;
+  added an **oral/interview practice mode** (real test is oral) with **no AI-scoring claim**.
+
+**Strategy integrated**
+- New **"Competitive landscape & differentiation"** section (USAHello, Citizenry, Citizen Now, SEO
+  sites, Quizlet/Anki, iCivics/Khan as adjacent, USCIS as source-of-truth-to-cite, CASA/CUNY
+  Citizenship Now/libraries as delivery partners); differentiator = **open, CC-BY, provenance-bearing,
+  version-aware item bank as reusable infrastructure — distribution by reuse**.
+- **Claude API leverage** folded into §6 (draft items from official answers, plain-language rewrite to
+  grade 6–8, translation drafting, LLM-judge eval) with the hard limits preserved: **Claude never
+  certifies correctness, never decides which version applies, never gives immigration advice**.
+- **Optimizations folded into the Roadmap:** `testVersion` + version explainer (M0), 2008+2025+65/20
+  sources + reading/writing deliverable (M1), oral mode + version selector + audio/TTS (M2),
+  **official-update watch in CI** + partner/org toolkit (M4), version-change re-verification (M6).
+- New **"Adjacent opportunities"** section (know-your-rights, open-flashcards,
+  vital-info-translations, reusable exam-prep engine for other countries' tests, `civics-bank` MCP
+  server).
+- **Open questions merged** (oral-mode scope, version-selector presentation, audio/TTS, official-update
+  watch cadence, first engine spin-off; version question resolved toward 2008 + 2025 + 65/20).
+
+**Preserved unchanged:** all civic guardrails (non-partisan; official-source citation; not
+legal/immigration advice; multilingual review), provenance-as-a-gate, HSE IP/legal gating, the
+build-vs-pivot rule, privacy-by-construction, risk-tier (MEDIUM) and the HIGH-escalation rule, and the
+17-section structure. `COMPETITIVE-ANALYSIS.md` left unchanged.
