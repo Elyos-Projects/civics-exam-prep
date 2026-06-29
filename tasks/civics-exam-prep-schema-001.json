@@ -1,6 +1,6 @@
 {
   "id": "civics-exam-prep-schema-001",
-  "title": "Item-bank schema (stem/options/answer/rationale/sources/dynamicAnswer/lastVerified/validUntil/lang/license)",
+  "title": "Item-bank schema (stem/options/answer/rationale/sources/testVersion/dynamicAnswer/lastVerified/validUntil/lang/license)",
   "project": "civics-exam-prep",
   "type": "design-spec",
   "lane": "donated",
@@ -18,10 +18,11 @@
   "deliverable": "document",
   "tokenEstimate": "medium",
   "status": "open",
-  "context": "Civics-Exam-Prep produces open, accuracy-reviewed practice items for free high-stakes exams, each item cited to an official source. The item-bank schema is a hard product gate: it encodes 'no source, no item' provenance, single-correct-for-static, and dynamic-answer handling so accuracy and review are enforceable in CI. No delivery partner or accuracy reviewer is yet secured (verifiedNeed=false).",
-  "objective": "Specify the version-controlled item-bank schema covering every field needed for cited, reviewable, staleness-aware practice items.",
+  "context": "Civics-Exam-Prep produces open, accuracy-reviewed practice items for free high-stakes exams, each item cited to an official source. The item-bank schema is a hard product gate: it encodes 'no source, no item' provenance, single-correct-for-static, dynamic-answer handling, and a first-class testVersion dimension (2008|2025|senior-65-20) so accuracy and review are enforceable in CI. The bank parametrizes question count + pass threshold per testVersion (2008 = 10-of-100/6; 2025 = 20-of-128/12; 65/20 = reduced starred bank); 2020 is archived. No delivery partner or accuracy reviewer is yet secured (verifiedNeed=false).",
+  "objective": "Specify the version-controlled item-bank schema covering every field needed for cited, reviewable, staleness-aware, version-correct practice items.",
   "acceptanceCriteria": [
-    "Defines every field incl. sources[] (official citation + URL + retrieval date + version + legal-status note), dynamicAnswer (static | officeholder | state-dependent), correctAnswer (forbidden for dynamic items - they reference a lookup/method instead), lastVerified/validUntil, language, outputLicense, reviewedBy/signoffVersion",
+    "Defines every field incl. sources[] (official citation + URL + retrieval date + version + legal-status note), testVersion (2008 | 2025 | senior-65-20), dynamicAnswer (static | officeholder | state-dependent), correctAnswer (forbidden for dynamic items - they reference a lookup/method instead), lastVerified/validUntil, language, outputLicense, reviewedBy/signoffVersion",
+    "Parametrizes question count + pass threshold per testVersion (2008 = 10-of-100/6; 2025 = 20-of-128/12; 65/20 = reduced starred bank) - no single static threshold; 2020 is archived",
     "Requires >= 1 source per item and exactly one correct answer for static items",
     "Items stored as version-controlled files so provenance + review are visible in history"
   ],

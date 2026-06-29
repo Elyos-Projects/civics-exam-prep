@@ -19,11 +19,13 @@
   "deliverable": "document",
   "tokenEstimate": "medium",
   "status": "open",
-  "context": "Pilot readiness requires the practice surface and exports to fully meet WCAG 2.2 AA, offline to be verified end-to-end, an independent accuracy spot-check to pass, and a learner-pilot runbook so a partner can run a cohort with an anonymous outcome survey.",
-  "objective": "Verify full WCAG 2.2 AA + offline, pass an independent >=10% accuracy spot-check, and write the learner-pilot onboarding runbook.",
+  "context": "Pilot readiness requires the practice surface and exports to fully meet WCAG 2.2 AA, offline to be verified end-to-end, an independent accuracy spot-check to pass, an official-update watch wired into CI so future USCIS test-version changes are detected events (not silent staleness), a partner/org toolkit for CBOs and libraries, and a learner-pilot runbook so a partner can run a cohort with an anonymous outcome survey.",
+  "objective": "Verify full WCAG 2.2 AA + offline, pass an independent >=10% accuracy spot-check, wire the official-update watch into CI, draft the partner/org toolkit, and write the learner-pilot onboarding runbook.",
   "acceptanceCriteria": [
     "Practice surface + exports meet WCAG 2.2 AA; offline verified end-to-end",
     "Independent >= 10% accuracy spot-check passes (0 errors; any found blocks release)",
+    "Official-update watch wired into CI (monitors the USCIS Check for Test Updates / 2025-test pages and flags content for re-verification when USCIS publishes a change - turns a future version change into a detected event)",
+    "Partner/org toolkit (printable class sets + facilitator guide) drafted for CASA / CUNY Citizenship Now / library adult-ed, converting partners-not-competitors into the M5 distribution channel",
     "Learner-pilot onboarding runbook written (how a partner runs a cohort, anonymous outcome survey included)"
   ],
   "resources": [

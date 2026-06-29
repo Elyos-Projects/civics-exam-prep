@@ -25,6 +25,7 @@
     "Specifies the accuracy check (every claim traceable to an official source), the non-partisan check (only what official sources state; no opinion/advocacy/party-candidate framing), and the sensitivity check (no demeaning/exclusionary framing of immigrants/groups)",
     "Mandates persistent 'Study material - not an official test; not legal/immigration advice; verify current answers with the official source' labeling",
     "Defines the dynamic-answer policy (never serve a stale static answer for officeholder/state items; show the 'verify current' affordance + official pointer; short re-verification cadence)",
+    "Defines the test-version policy: a reviewer-vetted, strictly factual, non-causal 'the test changed' explainer (what/when/who-it-applies-to, sourced to USCIS - no political-causal narrative for the politically charged 2025 redesign) and a neutral version selector presented as information + USCIS link, never a determination of which test applies to a person (65/20 + exceptions routed to USCIS)",
     "Defines version-scoped sign-off, the reviewer veto, and the HIGH-escalation rule for advice-drift",
     "Reviewed + signed off by the accuracy reviewer (recorded in the reviewers ledger)"
   ],

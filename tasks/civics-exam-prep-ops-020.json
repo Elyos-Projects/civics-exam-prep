@@ -23,7 +23,7 @@
   "objective": "Write the ops runbook, define and schedule the content review cadence, stand up the outcomes dashboard, and name the maintenance rotation.",
   "acceptanceCriteria": [
     "Runbook covers deploy, content updates, source re-verification, and partner support",
-    "Content review cadence defined + scheduled: dynamic/officeholder items on a short cadence and on known changes (elections, official-question-set revisions); static civics facts on a longer cadence; HSE standards re-checked on revision - all driving the staleness fail-safe",
+    "Content review cadence defined + scheduled: dynamic/officeholder items on a short cadence and on known changes (elections, official-question-set/test-version revisions flagged by the official-update watch); static civics facts on a longer cadence; HSE standards re-checked on revision - all driving the staleness fail-safe",
     "Outcomes dashboard tracks learners reached, readiness improvement, and voluntary pass reports (not engagement metrics); named maintenance rotation; documented, reviewer-gated process for adding languages/exams"
   ],
   "resources": [

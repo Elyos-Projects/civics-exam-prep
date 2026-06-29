@@ -22,7 +22,7 @@
   "objective": "Draft original multiple-choice and flashcard citizenship items covering all official civics topics, each cited to a USCIS answer and passing the validator.",
   "acceptanceCriteria": [
     "Original stems, distractors, and rationales (we do not copy any third-party question set); every item cites an official USCIS answer (100% citation coverage; validator passes)",
-    "Covers all official civics topics (principles of democracy, system of government, rights/responsibilities, American history, geography, symbols, holidays) at the plain-language target",
+    "Covers all official civics topics (principles of democracy, system of government, rights/responsibilities, American history, geography, symbols, holidays) for both live versions (2008 and 2025), each item tagged with its testVersion, with the 65/20 starred subset marked as a filtered view, at the plain-language target",
     "Dynamic items reference the dynamic-answer subsystem, not a static key"
   ],
   "resources": [

@@ -1,6 +1,6 @@
 {
   "id": "civics-exam-prep-sources-005",
-  "title": "USCIS source vetting + provenance recording (2008 + 2020 questions/answers + reading/writing vocab)",
+  "title": "USCIS source vetting + provenance recording (2008 + 2025 questions/answers + 65/20 subset + reading/writing vocab; 2020 archived)",
   "project": "civics-exam-prep",
   "type": "data",
   "lane": "donated",
@@ -20,9 +20,10 @@
   "tokenEstimate": "medium",
   "status": "open",
   "context": "Citizenship is the pilot exam on the clean public-domain footing (USCIS materials are U.S. Government works, 17 U.S.C. 105). Before any items are authored, the official USCIS sources must be vetted and their provenance recorded so every item can cite an official answer. Accuracy reviewer is TO BE SECURED (verifiedNeed=false).",
-  "objective": "Vet and record provenance for the USCIS civics sources (2008 and 2020 sets) and the reading/writing vocabulary, with public-domain status confirmed per source.",
+  "objective": "Vet and record provenance for the USCIS civics sources (both live versions: 2008 and 2025) and the 65/20 subset and reading/writing vocabulary, with public-domain status confirmed per source. The 2020 version is archived - not a live study target.",
   "acceptanceCriteria": [
-    "Confirms + records public-domain status for each source; captures both the 2008 and 2020 civics question/answer sets and the reading/writing vocabulary, noting which applies by filing date",
+    "Confirms + records public-domain status for each source; captures both live versions - the 2008 (100 Q) and the 2025 (128 Q) civics question/answer sets - the 65/20 reduced (starred) subset, and the reading/writing vocabulary, noting which applies by N-400 filing date (2008 = filed before Oct 20 2025; 2025 = filed on/after) and tagging each item's testVersion. The 2020 version is archived (historical only), not a live study target",
+    "Records the per-version format (2008 = 10-of-100/6 to pass; 2025 = 20-of-128/12 to pass) for mock-test parametrization",
     "Provenance recorded per source (document, citation, URL, retrieval date, version, legal-status)",
     "Accuracy reviewer confirms the official answers before items are authored"
   ],

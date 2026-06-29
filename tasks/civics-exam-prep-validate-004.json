@@ -22,7 +22,7 @@
   "context": "Civics-Exam-Prep enforces 'no source, no item' as a build-breaking gate so unsourced or stale items can never ship. This validator turns the item-bank schema (schema-001) and repo CI (repo-002) into runtime-enforced quality and provenance checks.",
   "objective": "Implement and CI-wire validation that fails the build on items missing a source, lacking single-correct (static), bad distractors, exceeding readability, or past validUntil; report citation coverage and staleness.",
   "acceptanceCriteria": [
-    "CI fails the build on any item missing a source, lacking a single correct answer (static), containing duplicate/contradictory options, exceeding the readability target, or past validUntil without a flag",
+    "CI fails the build on any item missing a source, lacking a single correct answer (static), containing duplicate/contradictory options, exceeding the readability target, carrying an invalid/missing testVersion, or past validUntil without a flag",
     "Reports citation coverage (target 100%) and a staleness report per run",
     "Wired into the repo CI from task civics-exam-prep-repo-002 and runs on every PR"
   ],
